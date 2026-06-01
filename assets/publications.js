@@ -36,7 +36,7 @@ function renderPublication(publication) {
   const details = [venue, publication.volume && `Vol. ${escapeHtml(publication.volume)}`, publication.pages && `pp. ${escapeHtml(publication.pages)}`]
     .filter(Boolean)
     .join(", ");
-  const url = escapeAttribute(publication.url || publication.doi || "#");
+  const url = escapeAttribute(publication.page_url || publication.url || publication.doi || "#");
   const doi = publication.doi ? `<a href="https://doi.org/${escapeAttribute(publication.doi)}">DOI</a>` : "";
 
   return `
