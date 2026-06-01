@@ -41,9 +41,12 @@ function renderPublication(publication) {
 
   return `
     <li class="publication-item">
-      <h3><a href="${url}">${title}</a></h3>
-      <p class="publication-authors">${authors}</p>
-      <p class="publication-meta">${details}${details && year ? " · " : ""}${year}${doi ? ` · ${doi}` : ""}</p>
+      <span class="publication-year">${year}</span>
+      <div class="publication-content">
+        <h3><a href="${url}">${title}</a></h3>
+        <p class="publication-authors">${authors}</p>
+        <p class="publication-meta">${details}${doi ? ` · ${doi}` : ""}</p>
+      </div>
     </li>
   `;
 }
