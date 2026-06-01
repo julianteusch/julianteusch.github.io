@@ -1,0 +1,104 @@
+{
+  "source": "OpenAlex",
+  "source_url": "https://openalex.org/authors/orcid:0000-0002-4103-8430",
+  "orcid": "0000-0002-4103-8430",
+  "updated_at": "2026-06-01T13:19:57.297Z",
+  "publications": [
+    {
+      "title": "Throttle or Thwart? The effect of local policy regulations on micromobility demand – A Difference-in-Differences approach",
+      "year": 2026,
+      "date": "2026-01-01",
+      "authors": [
+        "Zeeshan Asghar",
+        "Jan N. Gremmel",
+        "Julian Teusch",
+        "Christian Koetsier",
+        "David M. Woisetschläger",
+        "Monika Sester",
+        "Jörg P. Müller"
+      ],
+      "venue": "Transportation Research Procedia",
+      "doi": "10.1016/j.trpro.2026.02.042",
+      "url": "https://doi.org/10.1016/j.trpro.2026.02.042",
+      "volume": "95",
+      "issue": "",
+      "pages": "329-336",
+      "citations": 0
+    },
+    {
+      "title": "Spatial-Temporal Patterns of E-Scooter Demand Prediction Across Cities",
+      "year": 2025,
+      "date": "2025-01-01",
+      "authors": [
+        "Sören Schleibaum",
+        "Julian Teusch",
+        "Yannick Oskar Scherr",
+        "Jörg P. Müller"
+      ],
+      "venue": "Transportation Research Procedia",
+      "doi": "10.1016/j.trpro.2025.04.007",
+      "url": "https://doi.org/10.1016/j.trpro.2025.04.007",
+      "volume": "86",
+      "issue": "",
+      "pages": "48-55",
+      "citations": 2
+    },
+    {
+      "title": "Strategic planning of geo-fenced micro-mobility facilities using reinforcement learning",
+      "year": 2024,
+      "date": "2024-12-06",
+      "authors": [
+        "Julian Teusch",
+        "Bruno Neumann Saavedra",
+        "Yannick Oskar Scherr",
+        "Jörg P. Müller"
+      ],
+      "venue": "Transportation Research Part E: Logistics and Transportation Review",
+      "doi": "10.1016/j.tre.2024.103872",
+      "url": "https://doi.org/10.1016/j.tre.2024.103872",
+      "volume": "194",
+      "issue": "",
+      "pages": "103872",
+      "citations": 10
+    },
+    {
+      "title": "A systematic analysis of design choices in short-term taxi demand prediction models",
+      "year": 2024,
+      "date": "2024-01-01",
+      "authors": [
+        "Sören Schleibaum",
+        "Julian Teusch",
+        "Rüdiger Ehlers",
+        "Jörg P. Müller"
+      ],
+      "venue": "Transportation Research Procedia",
+      "doi": "10.1016/j.trpro.2024.02.069",
+      "url": "https://doi.org/10.1016/j.trpro.2024.02.069",
+      "volume": "78",
+      "issue": "",
+      "pages": "554-561",
+      "citations": 1
+    },
+    {
+      "title": "A Systematic Literature Review on Machine Learning in Shared Mobility",
+      "year": 2023,
+      "date": "2023-01-01",
+      "authors": [
+        "Julian Teusch",
+        "Jan N. Gremmel",
+        "Christian Koetsier",
+        "Fatema Tuj Johora",
+        "Monika Sester",
+        "David M. Woisetschläger",
+        "Jörg P. Müller"
+      ],
+      "venue": "IEEE Open Journal of Intelligent Transportation Systems",
+      "doi": "10.1109/ojits.2023.3334393",
+      "url": "https://doi.org/10.1109/ojits.2023.3334393",
+      "volume": "4",
+      "issue": "",
+      "pages": "870-899",
+      "citations": 29
+    }
+  ]
+}
