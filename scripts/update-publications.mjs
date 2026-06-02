@@ -58,6 +58,12 @@ const venueOverrides = new Map([
   ],
   ["ieee open journal of intelligent transportation systems", "IEEE Open Journal of Intelligent Transportation Systems"],
 ]);
+const authorOverrides = new Map([
+  ["David M. Woisetschlaeger", "David M. Woisetschläger"],
+]);
+const supersededPreprintDois = new Set([
+  "10.2139/ssrn.4745247",
+]);
 
 function formatVenue(name) {
   if (!name) return "";
@@ -75,6 +81,7 @@ function formatPages(biblio) {
 function formatAuthors(authorships) {
   return (authorships || [])
     .map((entry) => entry.author?.display_name)
+    .map((name) => authorOverrides.get(name) || name)
     .filter(Boolean);
 }
 
@@ -95,31 +102,12 @@ function firstAndLastPage(pages) {
   return { first: parts[0] || "", last: parts[1] || "" };
 }
 
-const publications = (payload.results || [])
+const works = payload.results || [];
+const publications = works
   .filter((work) => !work.is_retracted)
   .filter((work) => work.primary_location?.is_published === true)
   .filter((work) => cleanDoi(work.doi))
-  .map((work) => {
-    const doi = cleanDoi(work.doi);
-    const source = work.primary_location?.source || {};
-    const slug = slugify(work.title, work.publication_year);
-    return {
-      title: work.title,
-      year: work.publication_year,
-      date: work.publication_date,
-      slug,
-      page_url: `${SITE_URL}/publications/${slug}/`,
-      authors: formatAuthors(work.authorships),
-      venue: formatVenue(source.display_name),
-      doi,
-      url: doiUrl(doi) || work.primary_location?.landing_page_url || work.id,
-      volume: work.biblio?.volume || "",
-      issue: work.biblio?.issue || "",
-      pages: formatPages(work.biblio),
-      citations: work.cited_by_count ?? 0,
-      abstract: formatAbstract(work.abstract_inverted_index),
-    };
-  })
+  .map((work) => normalizeWork(work, "publications"))
   .filter((work) => {
     const key = work.doi || titleKey(work.title);
     if (seen.has(key)) return false;
@@ -132,11 +120,31 @@ const publications = (payload.results || [])
     return String(a.title).localeCompare(String(b.title));
   });
 
+const preprintSeen = new Set();
+const preprints = works
+  .filter((work) => !work.is_retracted)
+  .filter((work) => work.primary_location?.is_published !== true)
+  .filter((work) => work.primary_location?.is_accepted === true)
+  .filter((work) => work.primary_location?.source?.display_name === "SSRN Electronic Journal")
+  .filter((work) => cleanDoi(work.doi))
+  .map((work) => normalizeWork(work, "preprints"))
+  .filter((work) => !supersededPreprintDois.has(work.doi))
+  .filter((work) => {
+    const key = titleKey(work.title);
+    if (preprintSeen.has(key)) return false;
+    preprintSeen.add(key);
+    return true;
+  })
+  .sort((a, b) => String(b.date || "").localeCompare(String(a.date || "")));
+
 let updatedAt = new Date().toISOString();
 
 try {
   const existing = JSON.parse(await readFile(OUTPUT, "utf8"));
-  if (JSON.stringify(existing.publications || []) === JSON.stringify(publications)) {
+  if (
+    JSON.stringify(existing.publications || []) === JSON.stringify(publications) &&
+    JSON.stringify(existing.preprints || []) === JSON.stringify(preprints)
+  ) {
     updatedAt = existing.updated_at || updatedAt;
   }
 } catch {
@@ -149,21 +157,46 @@ const data = {
   orcid: ORCID,
   updated_at: updatedAt,
   publications,
+  preprints,
 };
 
 await mkdir(path.dirname(OUTPUT), { recursive: true });
 await writeFile(`${OUTPUT}.tmp`, `${JSON.stringify(data, null, 2)}\n`, "utf8");
 await rename(`${OUTPUT}.tmp`, OUTPUT);
-await writePublicationPages(publications);
-await writeSitemap(publications);
+await writePublicationPages(publications, "publications");
+await writePublicationPages(preprints, "preprints");
+await writeSitemap([...publications, ...preprints]);
 await writeRobots();
 
-console.log(`Wrote ${publications.length} published works to ${OUTPUT}`);
+console.log(`Wrote ${publications.length} published works and ${preprints.length} preprints to ${OUTPUT}`);
 
-async function writePublicationPages(items) {
-  await rm("publications", { recursive: true, force: true });
+function normalizeWork(work, section) {
+  const doi = cleanDoi(work.doi);
+  const source = work.primary_location?.source || {};
+  const slug = slugify(work.title, work.publication_year);
+  return {
+    title: work.title,
+    year: work.publication_year,
+    date: work.publication_date,
+    slug,
+    page_url: `${SITE_URL}/${section}/${slug}/`,
+    authors: formatAuthors(work.authorships),
+    venue: formatVenue(source.display_name),
+    doi,
+    url: doiUrl(doi) || work.primary_location?.landing_page_url || work.id,
+    volume: work.biblio?.volume || "",
+    issue: work.biblio?.issue || "",
+    pages: formatPages(work.biblio),
+    citations: work.cited_by_count ?? 0,
+    abstract: formatAbstract(work.abstract_inverted_index),
+    type: section === "preprints" ? "Preprint" : "Publication",
+  };
+}
+
+async function writePublicationPages(items, section) {
+  await rm(section, { recursive: true, force: true });
   for (const publication of items) {
-    const dir = path.join("publications", publication.slug);
+    const dir = path.join(section, publication.slug);
     await mkdir(dir, { recursive: true });
     await writeFile(path.join(dir, "index.html"), renderPublicationPage(publication), "utf8");
   }
@@ -221,6 +254,7 @@ ${citationMeta.map(([name, value]) => `  <meta name="${name}" content="${escapeH
         <a href="../../#about">About</a>
         <a href="../../#bio">Bio</a>
         <a href="../../#publications">Publications</a>
+        <a href="../../#preprints">Preprints</a>
         <a href="../../#contact">Contact</a>
       </div>
     </nav>

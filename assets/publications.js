@@ -1,8 +1,9 @@
 async function loadPublications() {
   const list = document.querySelector("[data-publications-list]");
+  const preprintsList = document.querySelector("[data-preprints-list]");
   const meta = document.querySelector("[data-publications-meta]");
 
-  if (!list) return;
+  if (!list && !preprintsList) return;
 
   try {
     const response = await fetch("data/publications.json", { cache: "no-store" });
@@ -10,20 +11,27 @@ async function loadPublications() {
 
     const data = await response.json();
     const publications = Array.isArray(data.publications) ? data.publications : [];
+    const preprints = Array.isArray(data.preprints) ? data.preprints : [];
 
-    if (publications.length === 0) {
+    if (list && publications.length === 0) {
       list.innerHTML = "<li>No published works found.</li>";
-      return;
+    } else if (list) {
+      list.innerHTML = publications.map(renderPublication).join("");
     }
 
-    list.innerHTML = publications.map(renderPublication).join("");
+    if (preprintsList && preprints.length === 0) {
+      preprintsList.innerHTML = "<li>No preprints found.</li>";
+    } else if (preprintsList) {
+      preprintsList.innerHTML = preprints.map(renderPublication).join("");
+    }
 
     if (meta && data.updated_at) {
       const date = new Date(data.updated_at);
       meta.textContent = `Automatically updated from ${data.source || "OpenAlex"} on ${date.toLocaleDateString("en-GB")}.`;
     }
   } catch (error) {
-    list.innerHTML = "<li>Publications could not be loaded right now.</li>";
+    if (list) list.innerHTML = "<li>Publications could not be loaded right now.</li>";
+    if (preprintsList) preprintsList.innerHTML = "<li>Preprints could not be loaded right now.</li>";
     if (meta) meta.textContent = "";
   }
 }
