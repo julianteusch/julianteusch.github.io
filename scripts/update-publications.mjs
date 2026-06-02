@@ -57,6 +57,8 @@ const venueOverrides = new Map([
     "Transportation Research Part E: Logistics and Transportation Review",
   ],
   ["ieee open journal of intelligent transportation systems", "IEEE Open Journal of Intelligent Transportation Systems"],
+  ["arxiv (cornell university)", "arXiv"],
+  ["arxiv.org", "arXiv"],
 ]);
 const authorOverrides = new Map([
   ["David M. Woisetschlaeger", "David M. Woisetschläger"],
@@ -124,9 +126,8 @@ const preprintSeen = new Set();
 const preprints = works
   .filter((work) => !work.is_retracted)
   .filter((work) => work.primary_location?.is_published !== true)
-  .filter((work) => work.primary_location?.is_accepted === true)
-  .filter((work) => work.primary_location?.source?.display_name === "SSRN Electronic Journal")
-  .filter((work) => cleanDoi(work.doi))
+  .filter((work) => isSupportedPreprint(work))
+  .sort((a, b) => Number(Boolean(cleanDoi(b.doi))) - Number(Boolean(cleanDoi(a.doi))))
   .map((work) => normalizeWork(work, "preprints"))
   .filter((work) => !supersededPreprintDois.has(work.doi))
   .filter((work) => {
@@ -136,6 +137,12 @@ const preprints = works
     return true;
   })
   .sort((a, b) => String(b.date || "").localeCompare(String(a.date || "")));
+
+function isSupportedPreprint(work) {
+  const source = work.primary_location?.source?.display_name?.toLowerCase() || "";
+  if (source === "ssrn electronic journal") return Boolean(cleanDoi(work.doi));
+  return source === "arxiv.org" || source === "arxiv (cornell university)";
+}
 
 let updatedAt = new Date().toISOString();
 
