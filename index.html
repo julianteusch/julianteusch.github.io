@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Julian Teusch is a researcher at the Institute of Informatics, Clausthal University of Technology.">
+  <meta name="description" content="Julian Teusch is a researcher at the Institute of Informatics, Clausthal University of Technology." data-i18n-content="document.description">
   <title>Julian Teusch</title>
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -12,85 +12,69 @@
     <aside class="profile-sidebar" aria-labelledby="page-title">
       <h1 id="page-title">Julian Teusch</h1>
       <figure class="portrait-wrap">
-        <img src="assets/profile_photo_bw.jpg" alt="Portrait of Julian Teusch" class="portrait">
+        <img src="assets/profile_photo_bw.jpg" alt="Portrait of Julian Teusch" class="portrait" data-i18n-alt="portrait.alt">
       </figure>
       <p class="affiliation">
-        Researcher<br>
-        Institute of Informatics<br>
-        Clausthal University of Technology
+        <span data-i18n="affiliation.role">Researcher</span><br>
+        <span data-i18n="affiliation.institute">Institute of Informatics</span><br>
+        <span data-i18n="affiliation.university">Clausthal University of Technology</span>
       </p>
-      <nav class="links" aria-label="Profile links">
-        <a href="mailto:julian.teusch@tu-clausthal.de">Email</a>
+      <nav class="links" aria-label="Profile links" data-i18n-aria-label="profile-links.label">
+        <a href="mailto:julian.teusch@tu-clausthal.de" data-i18n="profile.email">Email</a>
         <a href="https://scholar.google.de/citations?user=cZAKsLQAAAAJ&amp;hl=de&amp;oi=ao">Scholar</a>
         <a href="https://orcid.org/0000-0002-4103-8430">ORCID</a>
         <a href="https://dblp.org/pid/427/0234">DBLP</a>
       </nav>
+      <div class="language-switch" role="group" aria-label="Language selection" data-i18n-aria-label="language.switch">
+        <button class="language-button" type="button" data-lang-toggle="de" aria-pressed="false">DE</button>
+        <button class="language-button" type="button" data-lang-toggle="en" aria-pressed="true">EN</button>
+      </div>
     </aside>
 
     <div class="content-column">
     <section class="section" aria-labelledby="about">
-      <div class="section-kicker">About</div>
+      <div class="section-kicker" data-i18n="about.kicker">About</div>
       <div class="section-body">
-        <h2 id="about">About Me</h2>
-        <p>
-          I am a researcher at the Institute of Informatics at Clausthal University of Technology.
-          My work focuses on machine learning, optimization, causal policy evaluation, geospatial
-          analytics, reinforcement learning, and auditability for operational decision support.
-        </p>
-        <p>
-          Shared micromobility, particularly e-scooter systems, provides the empirical setting for
-          much of this work. I study how urban mobility platforms can be predicted, planned, governed,
-          and evaluated when decisions have to respect both operational goals and regulatory constraints.
-        </p>
+        <h2 id="about" data-i18n="about.heading">About Me</h2>
+        <p data-i18n="about.first">I am a researcher at the Institute of Informatics at Clausthal University of Technology. My work focuses on machine learning, optimization, causal policy evaluation, geospatial analytics, reinforcement learning, and auditability for operational decision support.</p>
+        <p data-i18n="about.second">Shared micromobility, particularly e-scooter systems, provides the empirical setting for much of this work. I study how urban mobility platforms can be predicted, planned, governed, and evaluated when decisions have to respect both operational goals and regulatory constraints.</p>
       </div>
     </section>
 
     <section class="section" aria-labelledby="bio">
-      <div class="section-kicker">Short Bio</div>
+      <div class="section-kicker" data-i18n="bio.kicker">Short Bio</div>
       <div class="section-body">
-        <h2 id="bio">Short Bio</h2>
-        <p>
-          Since 2021, I have been a research associate at the Institute of Informatics, Clausthal
-          University of Technology. I am pursuing a PhD in computer science under the supervision of
-          Prof. Dr. Jörg P. Müller, with a dissertation on governance-aware decision support for
-          regulated urban mobility systems.
-        </p>
-        <p>
-          Before that, I studied business information systems at Clausthal University of Technology
-          and transport, logistics, and mobility at Ostfalia University of Applied Sciences. My project
-          work includes data-driven shared and micromobility research, AI education, and digital
-          application systems.
-        </p>
+        <h2 id="bio" data-i18n="bio.heading">Short Bio</h2>
+        <p data-i18n="bio.first">Since 2021, I have been a research associate at the Institute of Informatics, Clausthal University of Technology. I am pursuing a PhD in computer science under the supervision of Prof. Dr. Jörg P. Müller, with a dissertation on governance-aware decision support for regulated urban mobility systems.</p>
+        <p data-i18n="bio.second">Before that, I studied business information systems at Clausthal University of Technology and transport, logistics, and mobility at Ostfalia University of Applied Sciences. My project work includes data-driven shared and micromobility research, AI education, and digital application systems.</p>
       </div>
     </section>
 
     <section class="section" aria-labelledby="publications">
-      <div class="section-kicker">Publications</div>
+      <div class="section-kicker" data-i18n="publications.kicker">Publications</div>
       <div class="section-body">
-        <h2 id="publications">Publications</h2>
+        <h2 id="publications" data-i18n="publications.heading">Publications</h2>
         <ol class="publication-list" data-publications-list>
-          <li>Loading publications...</li>
+          <li data-i18n="publications.loading">Loading publications...</li>
         </ol>
-        <p class="publication-note" data-publications-meta>
-          Publication data is loaded automatically from OpenAlex.
-        </p>
+        <p class="publication-note" data-publications-meta data-i18n="publications.note">Publication data is loaded automatically from OpenAlex.</p>
       </div>
     </section>
 
     <section class="section" aria-labelledby="preprints">
-      <div class="section-kicker">Preprints</div>
+      <div class="section-kicker" data-i18n="preprints.kicker">Preprints</div>
       <div class="section-body">
-        <h2 id="preprints">Preprints</h2>
+        <h2 id="preprints" data-i18n="preprints.heading">Preprints</h2>
         <ol class="publication-list" data-preprints-list>
-          <li>Loading preprints...</li>
+          <li data-i18n="preprints.loading">Loading preprints...</li>
         </ol>
       </div>
     </section>
 
-    <section class="contact" id="contact" aria-label="Contact information">
+    <section class="contact" id="contact" aria-label="Contact information" data-i18n-aria-label="contact.label">
       <p>
-        Institute of Informatics, Clausthal University of Technology<br>
-        Julius-Albert-Str. 4, 38678 Clausthal-Zellerfeld, Germany
+        <span data-i18n="contact.institute">Institute of Informatics, Clausthal University of Technology</span><br>
+        Julius-Albert-Str. 4, 38678 Clausthal-Zellerfeld, <span data-i18n="contact.country">Germany</span>
       </p>
       <p>
         <a href="mailto:julian.teusch@tu-clausthal.de">julian.teusch@tu-clausthal.de</a>
@@ -100,6 +84,7 @@
     </section>
     </div>
   </main>
+  <script src="assets/language.js"></script>
   <script src="assets/publications.js"></script>
 </body>
 </html>

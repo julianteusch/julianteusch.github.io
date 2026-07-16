@@ -21,14 +21,20 @@
 </head>
 <body>
   <main class="site-shell publication-page">
-    <nav class="topbar" aria-label="Main navigation">
+    <nav class="topbar" aria-label="Main navigation" data-i18n-aria-label="nav.label">
       <a class="wordmark" href="../../">Julian Teusch</a>
-      <div class="nav-links">
-        <a href="../../#about">About</a>
-        <a href="../../#bio">Bio</a>
-        <a href="../../#publications">Publications</a>
-        <a href="../../#preprints">Preprints</a>
-        <a href="../../#contact">Contact</a>
+      <div class="topbar-actions">
+        <div class="nav-links">
+          <a href="../../#about" data-i18n="nav.about">About</a>
+          <a href="../../#bio" data-i18n="nav.bio">Bio</a>
+          <a href="../../#publications" data-i18n="nav.publications">Publications</a>
+          <a href="../../#preprints" data-i18n="nav.preprints">Preprints</a>
+          <a href="../../#contact" data-i18n="nav.contact">Contact</a>
+        </div>
+        <div class="language-switch" role="group" aria-label="Language selection" data-i18n-aria-label="language.switch">
+          <button class="language-button" type="button" data-lang-toggle="de" aria-pressed="false">DE</button>
+          <button class="language-button" type="button" data-lang-toggle="en" aria-pressed="true">EN</button>
+        </div>
       </div>
     </nav>
     <article class="paper-detail">
@@ -36,13 +42,14 @@
       <h1>Regulating the Curb with Geofenced Parking: Evidence on the Friction--Reliability Trade-off in Shared E-Scooters</h1>
       <p class="paper-authors"><strong>Julian Teusch</strong>, Jan N. Gremmel, Sören Schleibaum, Jörg P. Müller, David M. Woisetschläger</p>
       <p class="publication-meta">SSRN Electronic Journal</p>
-      <section class="paper-abstract"><h2>Abstract</h2><p>The abstract is available on the linked record.</p></section>
+      <section class="paper-abstract"><h2 data-i18n="paper.abstract">Abstract</h2><p data-i18n="paper.abstractFallback">The abstract is available on the linked record.</p></section>
       <p class="paper-links">
         <a href="https://doi.org/10.2139/ssrn.6435376">DOI</a>
         <span aria-hidden="true"> · </span>
-        <a href="../../#preprints">All preprints</a>
+        <a href="../../#preprints" data-i18n="paper.allPreprints">All preprints</a>
       </p>
     </article>
   </main>
+  <script src="../../assets/language.js"></script>
 </body>
 </html>

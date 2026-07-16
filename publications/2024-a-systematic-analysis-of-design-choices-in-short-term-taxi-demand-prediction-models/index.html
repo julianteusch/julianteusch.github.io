@@ -23,28 +23,35 @@
 </head>
 <body>
   <main class="site-shell publication-page">
-    <nav class="topbar" aria-label="Main navigation">
+    <nav class="topbar" aria-label="Main navigation" data-i18n-aria-label="nav.label">
       <a class="wordmark" href="../../">Julian Teusch</a>
-      <div class="nav-links">
-        <a href="../../#about">About</a>
-        <a href="../../#bio">Bio</a>
-        <a href="../../#publications">Publications</a>
-        <a href="../../#preprints">Preprints</a>
-        <a href="../../#contact">Contact</a>
+      <div class="topbar-actions">
+        <div class="nav-links">
+          <a href="../../#about" data-i18n="nav.about">About</a>
+          <a href="../../#bio" data-i18n="nav.bio">Bio</a>
+          <a href="../../#publications" data-i18n="nav.publications">Publications</a>
+          <a href="../../#preprints" data-i18n="nav.preprints">Preprints</a>
+          <a href="../../#contact" data-i18n="nav.contact">Contact</a>
+        </div>
+        <div class="language-switch" role="group" aria-label="Language selection" data-i18n-aria-label="language.switch">
+          <button class="language-button" type="button" data-lang-toggle="de" aria-pressed="false">DE</button>
+          <button class="language-button" type="button" data-lang-toggle="en" aria-pressed="true">EN</button>
+        </div>
       </div>
     </nav>
     <article class="paper-detail">
       <p class="eyebrow">2024</p>
       <h1>A systematic analysis of design choices in short-term taxi demand prediction models</h1>
       <p class="paper-authors">Sören Schleibaum, <strong>Julian Teusch</strong>, Rüdiger Ehlers, Jörg P. Müller</p>
-      <p class="publication-meta">Transportation Research Procedia, Vol. 78, pp. 554-561</p>
-      <section class="paper-abstract"><h2>Abstract</h2><p>Accurate prediction of short-term taxi demand allows taxi services to strategically position idle vehicles in areas with insufficient supply, thus reducing idle times for taxis and waiting times for passengers. Towards this end, state-of-the-art approaches use Machine Learning (ML) models based on historic demand data, such as Long Short-Term Memory (LSTM), Fully Connected Feed Forward Neural Network (FCNN), Convolutional Neural Network (CNN), Graph Convolutional Network (GCN), or a combination of these. The majority of approaches use a grid representation of the environment to discretize the pickup locations of trips and time bins to order the temporal dimension of the large multi-target regression problem. While these models show good accuracy, many \textit{design choices}, such as the size of the grid cells or the number of previous time steps inserted into a model, are made without justification or without proper tuning. This paper systematically investigates these design decisions. Our hypothesis is that considering them jointly rather than in isolation can improve accuracy. We investigate the influence of (1) the selected grid cell size, (2) the number of input maps, (3) the usage of time shift to enlarge the training data, and (4) the potential of transfer learning on the accuracy of short-term taxi demand prediction. We selected different network types and evaluated them on two large real-world datasets. The evaluation shows that our model outperforms state-of-the-art short-term taxi demand prediction models.</p></section>
+      <p class="publication-meta">Transportation Research Procedia, <span data-i18n="publication.volume" data-i18n-value="78">Vol. 78</span>, <span data-i18n="publication.pages" data-i18n-value="554-561">pp. 554-561</span></p>
+      <section class="paper-abstract"><h2 data-i18n="paper.abstract">Abstract</h2><p>Accurate prediction of short-term taxi demand allows taxi services to strategically position idle vehicles in areas with insufficient supply, thus reducing idle times for taxis and waiting times for passengers. Towards this end, state-of-the-art approaches use Machine Learning (ML) models based on historic demand data, such as Long Short-Term Memory (LSTM), Fully Connected Feed Forward Neural Network (FCNN), Convolutional Neural Network (CNN), Graph Convolutional Network (GCN), or a combination of these. The majority of approaches use a grid representation of the environment to discretize the pickup locations of trips and time bins to order the temporal dimension of the large multi-target regression problem. While these models show good accuracy, many \textit{design choices}, such as the size of the grid cells or the number of previous time steps inserted into a model, are made without justification or without proper tuning. This paper systematically investigates these design decisions. Our hypothesis is that considering them jointly rather than in isolation can improve accuracy. We investigate the influence of (1) the selected grid cell size, (2) the number of input maps, (3) the usage of time shift to enlarge the training data, and (4) the potential of transfer learning on the accuracy of short-term taxi demand prediction. We selected different network types and evaluated them on two large real-world datasets. The evaluation shows that our model outperforms state-of-the-art short-term taxi demand prediction models.</p></section>
       <p class="paper-links">
         <a href="https://doi.org/10.1016/j.trpro.2024.02.069">DOI</a>
         <span aria-hidden="true"> · </span>
-        <a href="../../#publications">All publications</a>
+        <a href="../../#publications" data-i18n="paper.allPublications">All publications</a>
       </p>
     </article>
   </main>
+  <script src="../../assets/language.js"></script>
 </body>
 </html>

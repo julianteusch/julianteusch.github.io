@@ -23,28 +23,35 @@
 </head>
 <body>
   <main class="site-shell publication-page">
-    <nav class="topbar" aria-label="Main navigation">
+    <nav class="topbar" aria-label="Main navigation" data-i18n-aria-label="nav.label">
       <a class="wordmark" href="../../">Julian Teusch</a>
-      <div class="nav-links">
-        <a href="../../#about">About</a>
-        <a href="../../#bio">Bio</a>
-        <a href="../../#publications">Publications</a>
-        <a href="../../#preprints">Preprints</a>
-        <a href="../../#contact">Contact</a>
+      <div class="topbar-actions">
+        <div class="nav-links">
+          <a href="../../#about" data-i18n="nav.about">About</a>
+          <a href="../../#bio" data-i18n="nav.bio">Bio</a>
+          <a href="../../#publications" data-i18n="nav.publications">Publications</a>
+          <a href="../../#preprints" data-i18n="nav.preprints">Preprints</a>
+          <a href="../../#contact" data-i18n="nav.contact">Contact</a>
+        </div>
+        <div class="language-switch" role="group" aria-label="Language selection" data-i18n-aria-label="language.switch">
+          <button class="language-button" type="button" data-lang-toggle="de" aria-pressed="false">DE</button>
+          <button class="language-button" type="button" data-lang-toggle="en" aria-pressed="true">EN</button>
+        </div>
       </div>
     </nav>
     <article class="paper-detail">
       <p class="eyebrow">2025</p>
       <h1>Spatial-Temporal Patterns of E-Scooter Demand Prediction Across Cities</h1>
       <p class="paper-authors">Sören Schleibaum, <strong>Julian Teusch</strong>, Yannick Oskar Scherr, Jörg P. Müller</p>
-      <p class="publication-meta">Transportation Research Procedia, Vol. 86, pp. 48-55</p>
-      <section class="paper-abstract"><h2>Abstract</h2><p>Accurate prediction of e-scooter demand is pivotal for optimizing e-scooter services, as it helps minimize idle times and reduces passengers’ walking distances. Although current neural network-based methods offer high accuracy, their complex architectures obscure the interpretability of predictions, limiting insights into demand dynamics. We propose ST-NAM (Spatial-Temporal Neural Additive Model), an interpretable, neural-network-based model that matches the accuracy of advanced black-box approaches while providing clarity on the decision-making process. Evaluated on comprehensive real-world datasets, ST-NAM demonstrates competitive performance and reveals significant features influencing demand across cities at inference time. This research bridges the gap between predictive precision and model transparency, offering actionable insights to optimize e-scooter service.</p></section>
+      <p class="publication-meta">Transportation Research Procedia, <span data-i18n="publication.volume" data-i18n-value="86">Vol. 86</span>, <span data-i18n="publication.pages" data-i18n-value="48-55">pp. 48-55</span></p>
+      <section class="paper-abstract"><h2 data-i18n="paper.abstract">Abstract</h2><p>Accurate prediction of e-scooter demand is pivotal for optimizing e-scooter services, as it helps minimize idle times and reduces passengers’ walking distances. Although current neural network-based methods offer high accuracy, their complex architectures obscure the interpretability of predictions, limiting insights into demand dynamics. We propose ST-NAM (Spatial-Temporal Neural Additive Model), an interpretable, neural-network-based model that matches the accuracy of advanced black-box approaches while providing clarity on the decision-making process. Evaluated on comprehensive real-world datasets, ST-NAM demonstrates competitive performance and reveals significant features influencing demand across cities at inference time. This research bridges the gap between predictive precision and model transparency, offering actionable insights to optimize e-scooter service.</p></section>
       <p class="paper-links">
         <a href="https://doi.org/10.1016/j.trpro.2025.04.007">DOI</a>
         <span aria-hidden="true"> · </span>
-        <a href="../../#publications">All publications</a>
+        <a href="../../#publications" data-i18n="paper.allPublications">All publications</a>
       </p>
     </article>
   </main>
+  <script src="../../assets/language.js"></script>
 </body>
 </html>

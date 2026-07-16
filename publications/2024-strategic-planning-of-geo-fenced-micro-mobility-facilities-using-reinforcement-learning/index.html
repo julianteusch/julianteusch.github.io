@@ -22,28 +22,35 @@
 </head>
 <body>
   <main class="site-shell publication-page">
-    <nav class="topbar" aria-label="Main navigation">
+    <nav class="topbar" aria-label="Main navigation" data-i18n-aria-label="nav.label">
       <a class="wordmark" href="../../">Julian Teusch</a>
-      <div class="nav-links">
-        <a href="../../#about">About</a>
-        <a href="../../#bio">Bio</a>
-        <a href="../../#publications">Publications</a>
-        <a href="../../#preprints">Preprints</a>
-        <a href="../../#contact">Contact</a>
+      <div class="topbar-actions">
+        <div class="nav-links">
+          <a href="../../#about" data-i18n="nav.about">About</a>
+          <a href="../../#bio" data-i18n="nav.bio">Bio</a>
+          <a href="../../#publications" data-i18n="nav.publications">Publications</a>
+          <a href="../../#preprints" data-i18n="nav.preprints">Preprints</a>
+          <a href="../../#contact" data-i18n="nav.contact">Contact</a>
+        </div>
+        <div class="language-switch" role="group" aria-label="Language selection" data-i18n-aria-label="language.switch">
+          <button class="language-button" type="button" data-lang-toggle="de" aria-pressed="false">DE</button>
+          <button class="language-button" type="button" data-lang-toggle="en" aria-pressed="true">EN</button>
+        </div>
       </div>
     </nav>
     <article class="paper-detail">
       <p class="eyebrow">2024</p>
       <h1>Strategic planning of geo-fenced micro-mobility facilities using reinforcement learning</h1>
       <p class="paper-authors"><strong>Julian Teusch</strong>, Bruno Neumann Saavedra, Yannick Oskar Scherr, Jörg P. Müller</p>
-      <p class="publication-meta">Transportation Research Part E: Logistics and Transportation Review, Vol. 194, pp. 103872</p>
-      <section class="paper-abstract"><h2>Abstract</h2><p>The rise of Lightweight Shared Electric Vehicles (LSEVs) like e-scooters and e-bikes marks a shift towards sustainable urban mobility but brings challenges such as cluttering public spaces and distribution issues. Geo-fenced systems have emerged to mitigate these problems by restricting LSEVs to designated areas. However, integrating these infrastructures effectively remains challenging due to regulatory, convenience, and operational hurdles. In this study, we introduce a facility location optimization problem that strategically places Micro-Mobility Service Facilities (MMSFs) that enable charging, parking, and battery swapping of LSEVs. A utility model with benefit and loss functions accounts for the multiple objectives in this problem, including the impact of MMSF placement on service coverage and user convenience as well as financial and logistical costs. This model is uniquely customizable, allowing urban planners to modify the utility function’s parameters to align with specific local priorities and regulatory conditions. To solve this facility location optimization problem, we present a Deep Reinforcement Learning (RL) method that iteratively learns optimal placement strategies for Micro-Mobility Service Facilities by simulating interactions within real-world urban road networks and adapting to user demand patterns, regulatory constraints, and operational efficiencies. Our experiments in Austin and Louisville demonstrate that strategic placement of these facilities leads to substantial enhancements in infrastructure coverage, with improvements in parking demand by up to 163% in Austin and 72% in Louisville. These results underline the role of our approach in fostering more equitable and efficient urban mobility systems, significantly exceeding traditional simulation-based methods in both coverage and operational logistics. In particular, the results based on various budget scenarios reveal that service coverage and accessibility can be improved, with diminishing returns at higher budget levels due to demand saturation.</p></section>
+      <p class="publication-meta">Transportation Research Part E: Logistics and Transportation Review, <span data-i18n="publication.volume" data-i18n-value="194">Vol. 194</span>, <span data-i18n="publication.pages" data-i18n-value="103872">pp. 103872</span></p>
+      <section class="paper-abstract"><h2 data-i18n="paper.abstract">Abstract</h2><p>The rise of Lightweight Shared Electric Vehicles (LSEVs) like e-scooters and e-bikes marks a shift towards sustainable urban mobility but brings challenges such as cluttering public spaces and distribution issues. Geo-fenced systems have emerged to mitigate these problems by restricting LSEVs to designated areas. However, integrating these infrastructures effectively remains challenging due to regulatory, convenience, and operational hurdles. In this study, we introduce a facility location optimization problem that strategically places Micro-Mobility Service Facilities (MMSFs) that enable charging, parking, and battery swapping of LSEVs. A utility model with benefit and loss functions accounts for the multiple objectives in this problem, including the impact of MMSF placement on service coverage and user convenience as well as financial and logistical costs. This model is uniquely customizable, allowing urban planners to modify the utility function’s parameters to align with specific local priorities and regulatory conditions. To solve this facility location optimization problem, we present a Deep Reinforcement Learning (RL) method that iteratively learns optimal placement strategies for Micro-Mobility Service Facilities by simulating interactions within real-world urban road networks and adapting to user demand patterns, regulatory constraints, and operational efficiencies. Our experiments in Austin and Louisville demonstrate that strategic placement of these facilities leads to substantial enhancements in infrastructure coverage, with improvements in parking demand by up to 163% in Austin and 72% in Louisville. These results underline the role of our approach in fostering more equitable and efficient urban mobility systems, significantly exceeding traditional simulation-based methods in both coverage and operational logistics. In particular, the results based on various budget scenarios reveal that service coverage and accessibility can be improved, with diminishing returns at higher budget levels due to demand saturation.</p></section>
       <p class="paper-links">
         <a href="https://doi.org/10.1016/j.tre.2024.103872">DOI</a>
         <span aria-hidden="true"> · </span>
-        <a href="../../#publications">All publications</a>
+        <a href="../../#publications" data-i18n="paper.allPublications">All publications</a>
       </p>
     </article>
   </main>
+  <script src="../../assets/language.js"></script>
 </body>
 </html>

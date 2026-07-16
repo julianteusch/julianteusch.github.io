@@ -323,8 +323,15 @@ function renderPublicationPage(publication) {
   const pageTitle = `${publication.title} | Julian Teusch`;
   const { first, last } = firstAndLastPage(publication.pages);
   const section = publication.type === "Preprint"
-    ? { anchor: "preprints", label: "All preprints" }
-    : { anchor: "publications", label: "All publications" };
+    ? { anchor: "preprints", label: "All preprints", translationKey: "paper.allPreprints" }
+    : { anchor: "publications", label: "All publications", translationKey: "paper.allPublications" };
+  const abstract = publication.abstract || "The abstract is available on the linked record.";
+  const abstractTranslation = publication.abstract ? "" : ' data-i18n="paper.abstractFallback"';
+  const publicationMetadata = [
+    publication.venue && escapeHtml(publication.venue),
+    publication.volume && `<span data-i18n="publication.volume" data-i18n-value="${escapeHtml(publication.volume)}">Vol. ${escapeHtml(publication.volume)}</span>`,
+    publication.pages && `<span data-i18n="publication.pages" data-i18n-value="${escapeHtml(publication.pages)}">pp. ${escapeHtml(publication.pages)}</span>`,
+  ].filter(Boolean).join(", ");
   const citationMeta = [
     ["citation_title", publication.title],
     ...publication.authors.map((author) => ["citation_author", author]),
@@ -352,29 +359,36 @@ ${citationMeta.map(([name, value]) => `  <meta name="${name}" content="${escapeH
 </head>
 <body>
   <main class="site-shell publication-page">
-    <nav class="topbar" aria-label="Main navigation">
+    <nav class="topbar" aria-label="Main navigation" data-i18n-aria-label="nav.label">
       <a class="wordmark" href="../../">Julian Teusch</a>
-      <div class="nav-links">
-        <a href="../../#about">About</a>
-        <a href="../../#bio">Bio</a>
-        <a href="../../#publications">Publications</a>
-        <a href="../../#preprints">Preprints</a>
-        <a href="../../#contact">Contact</a>
+      <div class="topbar-actions">
+        <div class="nav-links">
+          <a href="../../#about" data-i18n="nav.about">About</a>
+          <a href="../../#bio" data-i18n="nav.bio">Bio</a>
+          <a href="../../#publications" data-i18n="nav.publications">Publications</a>
+          <a href="../../#preprints" data-i18n="nav.preprints">Preprints</a>
+          <a href="../../#contact" data-i18n="nav.contact">Contact</a>
+        </div>
+        <div class="language-switch" role="group" aria-label="Language selection" data-i18n-aria-label="language.switch">
+          <button class="language-button" type="button" data-lang-toggle="de" aria-pressed="false">DE</button>
+          <button class="language-button" type="button" data-lang-toggle="en" aria-pressed="true">EN</button>
+        </div>
       </div>
     </nav>
     <article class="paper-detail">
       <p class="eyebrow">${publication.year}</p>
       <h1>${escapeHtml(publication.title)}</h1>
       <p class="paper-authors">${publication.authors.map((author) => author === "Julian Teusch" ? `<strong>${escapeHtml(author)}</strong>` : escapeHtml(author)).join(", ")}</p>
-      <p class="publication-meta">${escapeHtml([publication.venue, publication.volume && `Vol. ${publication.volume}`, publication.pages && `pp. ${publication.pages}`].filter(Boolean).join(", "))}</p>
-      <section class="paper-abstract"><h2>Abstract</h2><p>${publication.abstract ? escapeHtml(publication.abstract) : "The abstract is available on the linked record."}</p></section>
+      <p class="publication-meta">${publicationMetadata}</p>
+      <section class="paper-abstract"><h2 data-i18n="paper.abstract">Abstract</h2><p${abstractTranslation}>${escapeHtml(abstract)}</p></section>
       <p class="paper-links">
         <a href="${escapeHtml(publication.url)}">DOI</a>
         <span aria-hidden="true"> · </span>
-        <a href="../../#${section.anchor}">${section.label}</a>
+        <a href="../../#${section.anchor}" data-i18n="${section.translationKey}">${section.label}</a>
       </p>
     </article>
   </main>
+  <script src="../../assets/language.js"></script>
 </body>
 </html>
 `;
