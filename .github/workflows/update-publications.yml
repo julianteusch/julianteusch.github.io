@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  pages: write
 
 jobs:
   update-publications:
@@ -35,3 +36,8 @@ jobs:
           git add data/publications.json publications preprints sitemap.xml robots.txt
           git commit -m "Update publications"
           git push
+
+      - name: Rebuild GitHub Pages
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api --method POST "repos/${{ github.repository }}/pages/builds"

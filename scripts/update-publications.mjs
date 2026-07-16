@@ -5,10 +5,13 @@ const ORCID = process.env.PUBLICATIONS_ORCID || "0000-0002-4103-8430";
 const OUTPUT = process.env.PUBLICATIONS_OUTPUT || "data/publications.json";
 const SITE_URL = (process.env.PUBLICATIONS_SITE_URL || "https://julianteusch.github.io").replace(/\/$/, "");
 const OPENALEX_URL = new URL("https://api.openalex.org/works");
+const OPENALEX_PAGE_SIZE = 100;
+const OPENALEX_MAX_ATTEMPTS = 3;
+const OPENALEX_RETRY_DELAY_MS = 1_000;
 
 OPENALEX_URL.searchParams.set("filter", `author.orcid:${ORCID}`);
 OPENALEX_URL.searchParams.set("sort", "publication_year:desc,publication_date:desc");
-OPENALEX_URL.searchParams.set("per-page", "100");
+OPENALEX_URL.searchParams.set("per-page", String(OPENALEX_PAGE_SIZE));
 OPENALEX_URL.searchParams.set(
   "select",
   [
@@ -26,17 +29,7 @@ OPENALEX_URL.searchParams.set(
   ].join(","),
 );
 
-const response = await fetch(OPENALEX_URL, {
-  headers: {
-    "User-Agent": "julianteusch.github.io publication updater (mailto:julian.teusch@tu-clausthal.de)",
-  },
-});
-
-if (!response.ok) {
-  throw new Error(`OpenAlex request failed: ${response.status} ${response.statusText}`);
-}
-
-const payload = await response.json();
+const payload = await fetchOpenAlex();
 const seen = new Set();
 
 const titleKey = (title) => title.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
@@ -65,6 +58,12 @@ const authorOverrides = new Map([
 ]);
 const supersededPreprintDois = new Set([
   "10.2139/ssrn.4745247",
+]);
+const preferredPreprintDois = new Map([
+  [
+    "regulating the curb with geofenced parking evidence on the friction reliability trade off in shared e scooters",
+    "10.2139/ssrn.6435376",
+  ],
 ]);
 
 function formatVenue(name) {
@@ -127,7 +126,7 @@ const preprints = works
   .filter((work) => !work.is_retracted)
   .filter((work) => work.primary_location?.is_published !== true)
   .filter((work) => isSupportedPreprint(work))
-  .sort((a, b) => Number(Boolean(cleanDoi(b.doi))) - Number(Boolean(cleanDoi(a.doi))))
+  .sort(comparePreprintRecords)
   .map((work) => normalizeWork(work, "preprints"))
   .filter((work) => !supersededPreprintDois.has(work.doi))
   .filter((work) => {
@@ -144,18 +143,113 @@ function isSupportedPreprint(work) {
   return source === "arxiv.org" || source === "arxiv (cornell university)";
 }
 
-let updatedAt = new Date().toISOString();
+function comparePreprintRecords(a, b) {
+  const aDoi = cleanDoi(a.doi);
+  const bDoi = cleanDoi(b.doi);
+  const preferredDoi = preferredPreprintDois.get(titleKey(a.title));
+  const byPreferredDoi = Number(bDoi === preferredDoi) - Number(aDoi === preferredDoi);
+  if (byPreferredDoi) return byPreferredDoi;
+
+  const byDate = String(b.publication_date || "").localeCompare(String(a.publication_date || ""));
+  if (byDate) return byDate;
+
+  return String(bDoi || "").localeCompare(String(aDoi || ""));
+}
+
+function workMatches(item, candidates) {
+  return candidates.some(
+    (candidate) => (item.doi && candidate.doi === item.doi) || titleKey(candidate.title) === titleKey(item.title),
+  );
+}
+
+function assertNoUnexpectedRemovals(existing, currentPublications, currentPreprints) {
+  if (!existing || process.env.PUBLICATIONS_ALLOW_REMOVALS === "1") return;
+
+  const missingPublications = (existing.publications || [])
+    .filter((item) => !workMatches(item, currentPublications));
+  const missingPreprints = (existing.preprints || [])
+    .filter((item) => !workMatches(item, currentPreprints) && !workMatches(item, currentPublications));
+
+  if (missingPublications.length || missingPreprints.length) {
+    const missingTitles = [...missingPublications, ...missingPreprints]
+      .map((item) => item.title)
+      .join("; ");
+    throw new Error(
+      `OpenAlex response is missing existing work(s): ${missingTitles}. ` +
+      "Set PUBLICATIONS_ALLOW_REMOVALS=1 only for an intentional removal.",
+    );
+  }
+}
+
+async function fetchOpenAlex() {
+  const works = [];
+  let cursor = "*";
+
+  while (cursor) {
+    const url = new URL(OPENALEX_URL);
+    url.searchParams.set("cursor", cursor);
+    const payload = await fetchOpenAlexPage(url);
+    works.push(...payload.results);
+    cursor = payload.meta?.next_cursor || null;
+  }
+
+  if (works.length === 0) {
+    throw new Error("OpenAlex response did not contain any works");
+  }
+
+  return { results: works };
+}
+
+async function fetchOpenAlexPage(url) {
+  let lastError;
+
+  for (let attempt = 1; attempt <= OPENALEX_MAX_ATTEMPTS; attempt += 1) {
+    try {
+      const response = await fetch(url, {
+        headers: {
+          "User-Agent": "julianteusch.github.io publication updater (mailto:julian.teusch@tu-clausthal.de)",
+        },
+        signal: AbortSignal.timeout(20_000),
+      });
+
+      if (!response.ok) {
+        throw new Error(`${response.status} ${response.statusText}`.trim());
+      }
+
+      const payload = await response.json();
+      if (!Array.isArray(payload.results)) {
+        throw new Error("response did not contain a works array");
+      }
+
+      return payload;
+    } catch (error) {
+      lastError = error;
+      if (attempt < OPENALEX_MAX_ATTEMPTS) {
+        await new Promise((resolve) => setTimeout(resolve, OPENALEX_RETRY_DELAY_MS * attempt));
+      }
+    }
+  }
+
+  throw new Error(`OpenAlex request failed after ${OPENALEX_MAX_ATTEMPTS} attempts: ${lastError.message}`);
+}
+
+let existingData = null;
 
 try {
-  const existing = JSON.parse(await readFile(OUTPUT, "utf8"));
-  if (
-    JSON.stringify(existing.publications || []) === JSON.stringify(publications) &&
-    JSON.stringify(existing.preprints || []) === JSON.stringify(preprints)
-  ) {
-    updatedAt = existing.updated_at || updatedAt;
-  }
+  existingData = JSON.parse(await readFile(OUTPUT, "utf8"));
 } catch {
   // No existing data file yet.
+}
+
+assertNoUnexpectedRemovals(existingData, publications, preprints);
+
+let updatedAt = new Date().toISOString();
+if (
+  existingData &&
+  JSON.stringify(existingData.publications || []) === JSON.stringify(publications) &&
+  JSON.stringify(existingData.preprints || []) === JSON.stringify(preprints)
+) {
+  updatedAt = existingData.updated_at || updatedAt;
 }
 
 const data = {
@@ -228,6 +322,9 @@ async function writeRobots() {
 function renderPublicationPage(publication) {
   const pageTitle = `${publication.title} | Julian Teusch`;
   const { first, last } = firstAndLastPage(publication.pages);
+  const section = publication.type === "Preprint"
+    ? { anchor: "preprints", label: "All preprints" }
+    : { anchor: "publications", label: "All publications" };
   const citationMeta = [
     ["citation_title", publication.title],
     ...publication.authors.map((author) => ["citation_author", author]),
@@ -270,11 +367,11 @@ ${citationMeta.map(([name, value]) => `  <meta name="${name}" content="${escapeH
       <h1>${escapeHtml(publication.title)}</h1>
       <p class="paper-authors">${publication.authors.map((author) => author === "Julian Teusch" ? `<strong>${escapeHtml(author)}</strong>` : escapeHtml(author)).join(", ")}</p>
       <p class="publication-meta">${escapeHtml([publication.venue, publication.volume && `Vol. ${publication.volume}`, publication.pages && `pp. ${publication.pages}`].filter(Boolean).join(", "))}</p>
-      ${publication.abstract ? `<section class="paper-abstract"><h2>Abstract</h2><p>${escapeHtml(publication.abstract)}</p></section>` : ""}
+      <section class="paper-abstract"><h2>Abstract</h2><p>${publication.abstract ? escapeHtml(publication.abstract) : "The abstract is available on the linked record."}</p></section>
       <p class="paper-links">
         <a href="${escapeHtml(publication.url)}">DOI</a>
         <span aria-hidden="true"> · </span>
-        <a href="../../#publications">All publications</a>
+        <a href="../../#${section.anchor}">${section.label}</a>
       </p>
     </article>
   </main>

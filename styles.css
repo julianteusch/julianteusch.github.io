@@ -274,12 +274,20 @@ h1 {
 }
 
 .publication-page {
+  display: block;
   width: min(880px, calc(100% - 44px));
 }
 
 .paper-detail {
   padding: 44px 0 68px;
   border-top: 1px solid var(--line);
+}
+
+.paper-detail .eyebrow {
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 650;
 }
 
 .paper-detail h1 {
