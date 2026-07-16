@@ -114,7 +114,7 @@ function getInitialLanguage() {
     // Language persistence is optional.
   }
 
-  return navigator.language?.toLowerCase().startsWith("de") ? "de" : "en";
+  return "en";
 }
 
 function applyLanguage(language, { persist = true, updateUrl = false } = {}) {
