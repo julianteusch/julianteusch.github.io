@@ -2,7 +2,7 @@
   "source": "OpenAlex",
   "source_url": "https://openalex.org/authors/orcid:0000-0002-4103-8430",
   "orcid": "0000-0002-4103-8430",
-  "updated_at": "2026-07-16T05:59:25.678Z",
+  "updated_at": "2026-08-03T08:41:50.928Z",
   "publications": [
     {
       "title": "Throttle or Thwart? The effect of local policy regulations on micromobility demand – A Difference-in-Differences approach",
@@ -116,7 +116,7 @@
       "volume": "4",
       "issue": "",
       "pages": "870-899",
-      "citations": 30,
+      "citations": 32,
       "abstract": "Shared mobility has emerged as a sustainable alternative to both private transportation and traditional public transport, promising to reduce the number of private vehicles on roads while offering users greater flexibility. Today, urban areas are home to a myriad of innovative services, including car-sharing, ride-sharing, and micromobility solutions like moped-sharing, bike-sharing, and e-scooter-sharing. Given the intense competition and the inherent operational complexities of shared mobility systems, providers are increasingly seeking specialized decision-support methodologies to boost operational efficiency. While recent research indicates that advanced machine learning methods can tackle the intricate challenges in shared mobility management decisions, a thorough evaluation of existing research is essential to fully grasp its potential and pinpoint areas needing further exploration. This paper presents a systematic literature review that specifically targets the application of Machine Learning for decision-making in Shared Mobility Systems. Our review underscores that Machine Learning offers methodological solutions to specific management challenges crucial for the effective operation of Shared Mobility Systems. We delve into the methods and datasets employed, spotlight research trends, and pinpoint research gaps. Our findings culminate in a comprehensive framework of Machine Learning techniques designed to bolster managerial decision-making in addressing challenges specific to Shared Mobility across various levels.",
       "type": "Publication"
     }
