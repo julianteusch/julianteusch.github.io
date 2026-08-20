@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="SPARC adds structured, calibrated uncertainty to human motion forecasting in a single forward pass." data-i18n-content="sparc.documentDescription">
+  <meta property="og:title" content="SPARC · Single-Pass Scaling for Motion Forecasting">
+  <meta property="og:description" content="Structured, calibrated human-motion uncertainty in one forward pass.">
+  <meta property="og:image" content="https://julianteusch.github.io/assets/projects/sparc/poster-preview.png">
+  <meta property="og:type" content="website">
+  <title>SPARC · Julian Teusch</title>
+  <link rel="canonical" href="https://julianteusch.github.io/projects/sparc/">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="sparc.css">
+</head>
+<body class="sparc-page">
+  <header class="project-header">
+    <a class="project-wordmark" href="../../" data-i18n="sparc.nav.home">Julian Teusch</a>
+    <div class="project-header-actions">
+      <nav class="project-nav" aria-label="Project navigation" data-i18n-aria-label="sparc.nav.label">
+        <a href="#overview" data-i18n="sparc.nav.overview">Overview</a>
+        <a href="#method" data-i18n="sparc.nav.method">Method</a>
+        <a href="#slides" data-i18n="sparc.nav.slides">Slides</a>
+        <a href="#resources" data-i18n="sparc.nav.resources">Resources</a>
+      </nav>
+      <div class="language-switch" role="group" aria-label="Language selection" data-i18n-aria-label="language.switch">
+        <button class="language-button" type="button" data-lang-toggle="de" aria-pressed="false">DE</button>
+        <button class="language-button" type="button" data-lang-toggle="en" aria-pressed="true">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="sparc-hero" aria-labelledby="sparc-title">
+      <img class="sparc-hero-motion" src="../../assets/projects/sparc/animations/slide30_low_high_kappa_intervals.gif" alt="" aria-hidden="true">
+      <div class="sparc-hero-content">
+        <p class="sparc-venue" data-i18n="sparc.venue">ECCV 2026 Spotlight · Malmö, Sweden</p>
+        <h1 id="sparc-title">
+          <span class="sparc-name">SPARC</span>
+          <span class="sparc-title" data-i18n="sparc.subtitle">Single-Pass Scaling for Motion Forecasting with Conformal Bayesian Last Layers</span>
+        </h1>
+        <p class="sparc-authors">
+          Sakif Hossain* · <strong>Julian Teusch*</strong> · Jörg P. Müller
+          <span data-i18n="sparc.authors.note">* Equal contribution</span>
+        </p>
+        <p class="sparc-summary" data-i18n="sparc.hero.summary">A fast deterministic motion forecaster becomes a structured, calibrated predictive density without Monte Carlo sampling or an ensemble loop.</p>
+        <div class="sparc-actions">
+          <a class="primary-action" href="../../assets/projects/sparc/downloads/sparc-paper.pdf" data-i18n="sparc.action.paper">Paper PDF</a>
+          <a href="#slides" data-i18n="sparc.action.slides">Extended slides</a>
+          <a href="../../assets/projects/sparc/downloads/sparc-supplement.pdf" data-i18n="sparc.action.supplement">Supplement</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section overview-section" id="overview">
+      <div class="project-section-inner overview-layout">
+        <div>
+          <p class="project-eyebrow" data-i18n="sparc.overview.eyebrow">The problem</p>
+          <h2 data-i18n="sparc.overview.heading">Point forecasts do not say when they should be trusted.</h2>
+        </div>
+        <p class="project-lede" data-i18n="sparc.overview.body">Human motion forecasting is a core component for planning around people. SPARC retains the speed of a deterministic backbone while adding an analytic epistemic signal, structured graph-temporal covariance and post-hoc split conformal calibration.</p>
+      </div>
+      <div class="metric-band" aria-label="Selected results">
+        <div class="metric"><strong>1.00</strong><span data-i18n="sparc.metric.nll">NLL mean rank</span></div>
+        <div class="metric"><strong>2.69</strong><span data-i18n="sparc.metric.tradeoff">MPJPE + NLL mean rank</span></div>
+        <div class="metric"><strong>1.79×</strong><span data-i18n="sparc.metric.risk">MPJPE in the highest-κ decile</span></div>
+        <div class="metric"><strong>1</strong><span data-i18n="sparc.metric.pass">forward pass at inference</span></div>
+      </div>
+    </section>
+
+    <section class="project-section method-section" id="method">
+      <div class="project-section-inner">
+        <p class="project-eyebrow" data-i18n="sparc.method.eyebrow">Method</p>
+        <h2 data-i18n="sparc.method.heading">Structured uncertainty, calibrated in one pass.</h2>
+        <div class="method-steps">
+          <article>
+            <span class="method-number">01</span>
+            <h3 data-i18n="sparc.method.leverage.title">Bayesian leverage</h3>
+            <p data-i18n="sparc.method.leverage.body">A conjugate Bayesian last layer yields κₜ(x), an analytic measure of how strongly a test input is supported by the learned feature representation.</p>
+          </article>
+          <article>
+            <span class="method-number">02</span>
+            <h3 data-i18n="sparc.method.structure.title">Preserved structure</h3>
+            <p data-i18n="sparc.method.structure.body">κₜ scales a graph-temporal covariance. Uncertainty expands where support is weak while correlations across joints and future steps remain intact.</p>
+          </article>
+          <article>
+            <span class="method-number">03</span>
+            <h3 data-i18n="sparc.method.calibration.title">Conformal calibration</h3>
+            <p data-i18n="sparc.method.calibration.body">Held-out residual quantiles turn predictive scales into 95% marginal tubes with finite-sample validity under exchangeability.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section animation-section" id="animations">
+      <div class="project-section-inner">
+        <div class="section-intro">
+          <p class="project-eyebrow" data-i18n="sparc.animation.eyebrow">Animated explanations</p>
+          <h2 data-i18n="sparc.animation.heading">Watch uncertainty take shape.</h2>
+          <p data-i18n="sparc.animation.body">The technical deck contains five animated figures. They remain live here, including covariance scaling, calibration and low-versus-high κ examples.</p>
+        </div>
+        <div class="animation-grid">
+          <figure class="animation-feature animation-feature-wide">
+            <img src="../../assets/projects/sparc/animations/slide30_low_high_kappa_intervals.gif" alt="Animated comparison of calibrated intervals for low and high kappa">
+            <figcaption data-i18n="sparc.animation.kappa">Higher κ produces visibly wider calibrated intervals.</figcaption>
+          </figure>
+          <figure class="animation-feature">
+            <img src="../../assets/projects/sparc/animations/slide13_diagonal_vs_structured_tubes.gif" alt="Animation comparing diagonal and structured uncertainty tubes" loading="lazy">
+            <figcaption data-i18n="sparc.animation.structure">Scale epistemics while preserving trajectory structure.</figcaption>
+          </figure>
+          <figure class="animation-feature">
+            <img src="../../assets/projects/sparc/animations/slide17_hybrid_temporal_inflation.gif" alt="Animation of temporal covariance inflation" loading="lazy">
+            <figcaption data-i18n="sparc.animation.hybrid">Inflate temporal covariance where epistemic leverage is high.</figcaption>
+          </figure>
+          <figure class="animation-feature">
+            <img src="../../assets/projects/sparc/animations/slide18_split_conformal_flow.gif" alt="Animation of split conformal calibration" loading="lazy">
+            <figcaption data-i18n="sparc.animation.conformal">Convert held-out residuals into calibrated 95% tubes.</figcaption>
+          </figure>
+          <figure class="animation-feature">
+            <img src="../../assets/projects/sparc/animations/slide28_efficient_vs_wide_calibration.gif" alt="Animation comparing efficient and overly wide calibrated intervals" loading="lazy">
+            <figcaption data-i18n="sparc.animation.efficiency">Target coverage without needlessly wide intervals.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="deck-section" id="slides">
+      <div class="project-section-inner">
+        <div class="section-intro deck-intro">
+          <p class="project-eyebrow" data-i18n="sparc.deck.eyebrow">Technical presentation</p>
+          <h2 data-i18n="sparc.deck.heading">Explore the full 42-slide deck.</h2>
+          <p data-i18n="sparc.deck.body">Use the controls, arrow keys or the slider. Animated figures play directly inside the corresponding slides; the downloadable PDF preserves the complete technical narrative.</p>
+        </div>
+
+        <div class="slide-player" data-slide-player>
+          <div class="slide-stage" data-slide-stage tabindex="0" aria-label="SPARC slide viewer">
+            <img class="slide-image" data-slide-image src="../../assets/projects/sparc/slides/sparc-slide-01.png" alt="SPARC presentation slide 1">
+            <img class="slide-animation-overlay" data-slide-animation alt="" hidden>
+            <span class="live-indicator" data-live-indicator hidden data-i18n="sparc.deck.live">Live animation</span>
+          </div>
+          <div class="slide-controls">
+            <button class="slide-icon-button" type="button" data-slide-previous aria-label="Previous slide" data-i18n-aria-label="sparc.deck.previous" title="Previous slide">‹</button>
+            <label class="slide-range-wrap">
+              <span class="visually-hidden" data-i18n="sparc.deck.counter" data-i18n-value="1">Slide 1 of 42</span>
+              <input class="slide-range" data-slide-range type="range" min="1" max="42" value="1" step="1">
+            </label>
+            <span class="slide-counter" data-slide-counter>1 / 42</span>
+            <button class="slide-mode-button" type="button" data-animation-toggle hidden data-i18n="sparc.deck.still">Still image</button>
+            <button class="slide-icon-button" type="button" data-slide-fullscreen aria-label="Fullscreen" data-i18n-aria-label="sparc.deck.fullscreen" title="Fullscreen">⛶</button>
+            <button class="slide-icon-button" type="button" data-slide-next aria-label="Next slide" data-i18n-aria-label="sparc.deck.next" title="Next slide">›</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section poster-section">
+      <div class="project-section-inner poster-layout">
+        <div class="poster-copy">
+          <p class="project-eyebrow" data-i18n="sparc.poster.eyebrow">ECCV 2026</p>
+          <h2 data-i18n="sparc.poster.heading">The project at a glance.</h2>
+          <p data-i18n="sparc.poster.body">The conference poster condenses the motivation, six-stage pipeline, main benchmark results and deployment scope into a single visual overview.</p>
+        </div>
+        <a class="poster-preview" href="../../assets/projects/sparc/poster-preview.png">
+          <img src="../../assets/projects/sparc/poster-preview.png" alt="SPARC ECCV 2026 conference poster" loading="lazy">
+        </a>
+      </div>
+    </section>
+
+    <section class="project-section resources-section" id="resources">
+      <div class="project-section-inner resources-layout">
+        <div>
+          <p class="project-eyebrow" data-i18n="sparc.resources.eyebrow">Resources</p>
+          <h2 data-i18n="sparc.resources.heading">Paper, supplement and presentations.</h2>
+        </div>
+        <div class="resource-list">
+          <a href="../../assets/projects/sparc/downloads/sparc-paper.pdf">
+            <span><strong data-i18n="sparc.resources.paper">Accepted manuscript</strong><small data-i18n="sparc.resources.paperDetail">Main paper · 18 pages</small></span><span aria-hidden="true">↓</span>
+          </a>
+          <a href="../../assets/projects/sparc/downloads/sparc-supplement.pdf">
+            <span><strong data-i18n="sparc.resources.supplement">Supplementary material</strong><small data-i18n="sparc.resources.supplementDetail">Extended methods and results</small></span><span aria-hidden="true">↓</span>
+          </a>
+          <a href="../../assets/projects/sparc/downloads/sparc-extended-slides.pdf">
+            <span><strong data-i18n="sparc.resources.deck">Extended technical deck</strong><small data-i18n="sparc.resources.deckDetail">42 slides · full technical deck</small></span><span aria-hidden="true">↓</span>
+          </a>
+          <a href="../../assets/projects/sparc/downloads/sparc-spotlight.pdf">
+            <span><strong data-i18n="sparc.resources.spotlight">ECCV spotlight deck</strong><small data-i18n="sparc.resources.spotlightDetail">5-minute talk · 12 slides</small></span><span aria-hidden="true">↓</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="citation-section">
+      <div class="project-section-inner citation-layout">
+        <div>
+          <p class="project-eyebrow" data-i18n="sparc.citation.eyebrow">Citation</p>
+          <h2 data-i18n="sparc.citation.heading">Accepted at ECCV 2026.</h2>
+        </div>
+        <p data-i18n="sparc.citation.text">Sakif Hossain*, Julian Teusch*, and Jörg P. Müller. SPARC: Single-Pass Scaling for Motion Forecasting with Conformal Bayesian Last Layers. European Conference on Computer Vision (ECCV), 2026. *Equal contribution.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="project-footer">
+    <a href="../../">Julian Teusch</a>
+    <span>SPARC · ECCV 2026</span>
+  </footer>
+
+  <script src="../../assets/language.js"></script>
+  <script src="sparc.js"></script>
+</body>
+</html>

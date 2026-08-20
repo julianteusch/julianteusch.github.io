@@ -8,6 +8,9 @@ const OPENALEX_URL = new URL("https://api.openalex.org/works");
 const OPENALEX_PAGE_SIZE = 100;
 const OPENALEX_MAX_ATTEMPTS = 3;
 const OPENALEX_RETRY_DELAY_MS = 1_000;
+const STATIC_PAGE_URLS = [
+  `${SITE_URL}/projects/sparc/`,
+];
 
 OPENALEX_URL.searchParams.set("filter", `author.orcid:${ORCID}`);
 OPENALEX_URL.searchParams.set("sort", "publication_year:desc,publication_date:desc");
@@ -306,6 +309,7 @@ async function writePublicationPages(items, section) {
 async function writeSitemap(items) {
   const urls = [
     `${SITE_URL}/`,
+    ...STATIC_PAGE_URLS,
     ...items.map((publication) => publication.page_url),
   ];
   const body = `<?xml version="1.0" encoding="UTF-8"?>\n` +
@@ -365,6 +369,7 @@ ${citationMeta.map(([name, value]) => `  <meta name="${name}" content="${escapeH
         <div class="nav-links">
           <a href="../../#about" data-i18n="nav.about">About</a>
           <a href="../../#bio" data-i18n="nav.bio">Bio</a>
+          <a href="../../#projects" data-i18n="nav.projects">Projects</a>
           <a href="../../#publications" data-i18n="nav.publications">Publications</a>
           <a href="../../#preprints" data-i18n="nav.preprints">Preprints</a>
           <a href="../../#contact" data-i18n="nav.contact">Contact</a>

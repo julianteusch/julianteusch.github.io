@@ -252,6 +252,29 @@ h1 {
   margin-bottom: 0;
 }
 
+.project-entry h3 {
+  margin: 0 0 3px;
+  font-size: 1rem;
+  font-weight: 650;
+  line-height: 1.4;
+}
+
+.project-entry h3 a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.project-entry h3 a:hover {
+  color: var(--warm);
+  text-decoration: underline;
+}
+
+.project-entry .project-entry-link {
+  display: inline-block;
+  margin-top: 5px;
+  font-size: 0.92rem;
+}
+
 .publication-list {
   display: grid;
   gap: 0;
