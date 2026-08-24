@@ -2,7 +2,7 @@
   "source": "OpenAlex",
   "source_url": "https://openalex.org/authors/orcid:0000-0002-4103-8430",
   "orcid": "0000-0002-4103-8430",
-  "updated_at": "2026-08-20T13:08:45.186Z",
+  "updated_at": "2026-08-24T05:53:36.746Z",
   "publications": [
     {
       "title": "Throttle or Thwart? The effect of local policy regulations on micromobility demand – A Difference-in-Differences approach",
@@ -91,7 +91,7 @@
       "volume": "78",
       "issue": "",
       "pages": "554-561",
-      "citations": 1,
+      "citations": 2,
       "abstract": "Accurate prediction of short-term taxi demand allows taxi services to strategically position idle vehicles in areas with insufficient supply, thus reducing idle times for taxis and waiting times for passengers. Towards this end, state-of-the-art approaches use Machine Learning (ML) models based on historic demand data, such as Long Short-Term Memory (LSTM), Fully Connected Feed Forward Neural Network (FCNN), Convolutional Neural Network (CNN), Graph Convolutional Network (GCN), or a combination of these. The majority of approaches use a grid representation of the environment to discretize the pickup locations of trips and time bins to order the temporal dimension of the large multi-target regression problem. While these models show good accuracy, many \\textit{design choices}, such as the size of the grid cells or the number of previous time steps inserted into a model, are made without justification or without proper tuning. This paper systematically investigates these design decisions. Our hypothesis is that considering them jointly rather than in isolation can improve accuracy. We investigate the influence of (1) the selected grid cell size, (2) the number of input maps, (3) the usage of time shift to enlarge the training data, and (4) the potential of transfer learning on the accuracy of short-term taxi demand prediction. We selected different network types and evaluated them on two large real-world datasets. The evaluation shows that our model outperforms state-of-the-art short-term taxi demand prediction models.",
       "type": "Publication"
     },
