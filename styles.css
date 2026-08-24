@@ -275,6 +275,10 @@ h1 {
   font-size: 0.92rem;
 }
 
+.project-entry + .project-entry {
+  margin-top: 15px;
+}
+
 .publication-list {
   display: grid;
   gap: 0;

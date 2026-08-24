@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Deep reinforcement learning for the strategic placement of parking, charging and battery-swapping facilities in urban micro-mobility systems." data-i18n-content="tre.documentDescription">
+  <meta property="og:title" content="Geo-Fenced Mobility Facilities · Julian Teusch">
+  <meta property="og:description" content="Strategic urban micro-mobility infrastructure planning with deep reinforcement learning.">
+  <meta property="og:image" content="https://julianteusch.github.io/assets/projects/geofenced-mobility-facilities/austin-demand.png">
+  <meta property="og:type" content="article">
+  <title>Geo-Fenced Mobility Facilities · Julian Teusch</title>
+  <link rel="canonical" href="https://julianteusch.github.io/projects/geofenced-mobility-facilities/">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../assets/research-project.css">
+</head>
+<body class="research-project-page tre-page">
+  <header class="research-header">
+    <a class="research-wordmark" href="../../">Julian Teusch</a>
+    <div class="research-header-actions">
+      <nav class="research-nav" aria-label="Project navigation" data-i18n-aria-label="project.nav.label">
+        <a href="#overview" data-i18n="project.nav.overview">Overview</a>
+        <a href="#method" data-i18n="project.nav.method">Method</a>
+        <a href="#cities" data-i18n="project.nav.cities">Cities</a>
+        <a href="#resources" data-i18n="project.nav.resources">Resources</a>
+      </nav>
+      <div class="language-switch" role="group" aria-label="Language selection" data-i18n-aria-label="language.switch">
+        <button class="language-button" type="button" data-lang-toggle="de" aria-pressed="false">DE</button>
+        <button class="language-button" type="button" data-lang-toggle="en" aria-pressed="true">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="research-hero" aria-labelledby="tre-title">
+      <div class="research-hero-media" aria-hidden="true">
+        <img src="../../assets/projects/geofenced-mobility-facilities/austin-demand.png" alt="">
+        <img src="../../assets/projects/geofenced-mobility-facilities/louisville-demand.png" alt="">
+      </div>
+      <div class="research-hero-shade"></div>
+      <div class="research-hero-content">
+        <p class="research-status" data-i18n="tre.status">Transportation Research Part E · Volume 194 · 2025</p>
+        <h1 id="tre-title"><span class="research-paper-title">Strategic planning of geo-fenced micro-mobility facilities using reinforcement learning</span></h1>
+        <p class="research-authors"><strong>Julian Teusch</strong> · Bruno Neumann Saavedra · Yannick Oskar Scherr · Jörg P. Müller</p>
+        <p class="research-summary" data-i18n="tre.hero.summary">A deep reinforcement-learning framework places parking, charging and battery-swapping facilities on real urban road networks while balancing demand coverage, convenience, budget and operational effort.</p>
+        <div class="research-actions">
+          <a class="primary-action" href="https://doi.org/10.1016/j.tre.2024.103872">DOI</a>
+          <a href="#cities" data-i18n="tre.action.cities">Explore the cities</a>
+          <a href="../../publications/2024-strategic-planning-of-geo-fenced-micro-mobility-facilities-using-reinforcement-learning/" data-i18n="tre.action.record">Publication record</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="research-section" id="overview">
+      <div class="research-section-inner">
+        <div class="research-intro">
+          <div>
+            <p class="research-eyebrow" data-i18n="tre.overview.eyebrow">The infrastructure problem</p>
+            <h2 data-i18n="tre.overview.heading">Where should a city invest its next mobility budget?</h2>
+          </div>
+          <p class="research-lede" data-i18n="tre.overview.body">Geo-fenced facilities can organize parking, support charging and simplify battery operations, but every location changes accessibility, coverage and repositioning effort. The framework represents these competing objectives in a configurable utility model and learns placement strategies on real road networks.</p>
+        </div>
+        <div class="metric-strip" aria-label="Selected results" data-i18n-aria-label="tre.metrics.label">
+          <div class="project-metric"><strong>163%</strong><span data-i18n="tre.metric.austin">improvement in parking-demand coverage in Austin</span></div>
+          <div class="project-metric"><strong>72%</strong><span data-i18n="tre.metric.louisville">improvement in parking-demand coverage in Louisville</span></div>
+          <div class="project-metric"><strong>2.5M+</strong><span data-i18n="tre.metric.trips">real-world trips across both city datasets</span></div>
+          <div class="project-metric"><strong>3</strong><span data-i18n="tre.metric.facilities">facility types: parking, charging and battery swapping</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="research-section research-soft" id="method">
+      <div class="research-section-inner">
+        <p class="research-eyebrow" data-i18n="tre.method.eyebrow">Planning framework</p>
+        <h2 data-i18n="tre.method.heading">From urban demand to a budget-feasible infrastructure plan.</h2>
+        <div class="workflow-grid">
+          <article class="workflow-step">
+            <span class="workflow-number">01</span>
+            <h3 data-i18n="tre.method.network.title">Model the city</h3>
+            <p data-i18n="tre.method.network.body">Combine road-network structure with observed parking and charging demand.</p>
+          </article>
+          <article class="workflow-step">
+            <span class="workflow-number">02</span>
+            <h3 data-i18n="tre.method.utility.title">Define priorities</h3>
+            <p data-i18n="tre.method.utility.body">Configure benefits and losses for coverage, convenience, capacity and repositioning.</p>
+          </article>
+          <article class="workflow-step">
+            <span class="workflow-number">03</span>
+            <h3 data-i18n="tre.method.agent.title">Learn placements</h3>
+            <p data-i18n="tre.method.agent.body">Let the reinforcement-learning agent create, extend or relocate facilities.</p>
+          </article>
+          <article class="workflow-step">
+            <span class="workflow-number">04</span>
+            <h3 data-i18n="tre.method.plan.title">Compare plans</h3>
+            <p data-i18n="tre.method.plan.body">Evaluate budget scenarios and identify where additional investment reaches diminishing returns.</p>
+          </article>
+        </div>
+        <div class="figure-pair">
+          <figure>
+            <img src="../../assets/projects/geofenced-mobility-facilities/action-demand.png" alt="Demand-based creation of a micro-mobility facility" data-i18n-alt="tre.method.demandAlt" loading="lazy">
+            <figcaption data-i18n="tre.method.demandCaption">Demand-based actions prioritize nodes with the largest uncovered need.</figcaption>
+          </figure>
+          <figure>
+            <img src="../../assets/projects/geofenced-mobility-facilities/action-coverage.png" alt="Coverage-based creation of a micro-mobility facility" data-i18n-alt="tre.method.coverageAlt" loading="lazy">
+            <figcaption data-i18n="tre.method.coverageCaption">Coverage-based actions place facilities where they reach the largest uncovered area.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="research-section" id="cities">
+      <div class="research-section-inner">
+        <div class="research-intro">
+          <div>
+            <p class="research-eyebrow" data-i18n="tre.cities.eyebrow">Real-world evaluation</p>
+            <h2 data-i18n="tre.cities.heading">Two cities, two distinct demand landscapes.</h2>
+          </div>
+          <p class="research-lede" data-i18n="tre.cities.body">Austin combines dense central demand with widely distributed outer areas, while Louisville exhibits a more concentrated pattern. Switching cities reveals why infrastructure strategies must adapt to local geography rather than reuse a single placement recipe.</p>
+        </div>
+        <div data-media-switcher>
+          <div class="project-media-switch" role="group" aria-label="Select city" data-i18n-aria-label="tre.cities.selector">
+            <button type="button" data-media-button data-media-src="../../assets/projects/geofenced-mobility-facilities/austin-demand.png" data-media-alt="tre.cities.austin.alt" data-media-caption="tre.cities.austin.caption" aria-pressed="true">Austin</button>
+            <button type="button" data-media-button data-media-src="../../assets/projects/geofenced-mobility-facilities/louisville-demand.png" data-media-alt="tre.cities.louisville.alt" data-media-caption="tre.cities.louisville.caption" aria-pressed="false">Louisville</button>
+          </div>
+          <figure class="project-media-stage">
+            <img data-media-image src="../../assets/projects/geofenced-mobility-facilities/austin-demand.png" alt="Parking demand across the Austin road network">
+            <figcaption data-media-caption data-i18n="tre.cities.austin.caption">Spatial distribution of parking demand across Austin's extended road network.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="research-section research-soft">
+      <div class="research-section-inner">
+        <div class="media-copy-layout">
+          <div>
+            <p class="research-eyebrow" data-i18n="tre.budget.eyebrow">Budget scenarios</p>
+            <h2 data-i18n="tre.budget.heading">Coverage rises, but returns eventually diminish.</h2>
+          </div>
+          <p class="research-copy" data-i18n="tre.budget.body">Across budgets from B500K to B3M, parking and charging coverage generally improve while average distances and operational effort expose different trade-offs. The pattern differs between Austin and Louisville, reinforcing the need for locally configurable objectives.</p>
+        </div>
+        <figure class="wide-figure">
+          <img src="../../assets/projects/geofenced-mobility-facilities/budget-results.png" alt="Budget effects on coverage and distance metrics in Austin and Louisville" data-i18n-alt="tre.budget.figureAlt">
+          <figcaption data-i18n="tre.budget.caption">Mean coverage and normalized distance metrics across six budget levels.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="research-section">
+      <div class="research-section-inner">
+        <div class="media-copy-layout">
+          <div>
+            <p class="research-eyebrow" data-i18n="tre.tradeoffs.eyebrow">Local priorities</p>
+            <h2 data-i18n="tre.tradeoffs.heading">There is no universally best utility function.</h2>
+          </div>
+          <p class="research-copy" data-i18n="tre.tradeoffs.body">Coverage-focused strategies favor service reach, while capacity, convenience and repositioning terms change which facility portfolio is preferred. The configurable objective lets planners make those priorities explicit rather than burying them inside the optimizer.</p>
+        </div>
+        <figure class="wide-figure">
+          <img src="../../assets/projects/geofenced-mobility-facilities/utility-tradeoffs.png" alt="Utility-function trade-offs for Austin and Louisville" data-i18n-alt="tre.tradeoffs.figureAlt">
+          <figcaption data-i18n="tre.tradeoffs.caption">Normalized outcomes for alternative utility-function configurations in Austin and Louisville.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="research-section research-soft" id="resources">
+      <div class="research-section-inner resource-layout">
+        <div>
+          <p class="research-eyebrow" data-i18n="tre.resources.eyebrow">Resources</p>
+          <h2 data-i18n="tre.resources.heading">Article and publication record.</h2>
+        </div>
+        <div class="resource-list">
+          <a href="https://doi.org/10.1016/j.tre.2024.103872">
+            <span><strong data-i18n="tre.resources.publisher">Publisher page</strong><small>Transportation Research Part E · DOI 10.1016/j.tre.2024.103872</small></span><span aria-hidden="true">↗</span>
+          </a>
+          <a href="../../publications/2024-strategic-planning-of-geo-fenced-micro-mobility-facilities-using-reinforcement-learning/">
+            <span><strong data-i18n="tre.resources.record">Publication record</strong><small data-i18n="tre.resources.recordDetail">Abstract, metadata and citation details</small></span><span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="research-citation">
+      <div class="research-section-inner citation-layout">
+        <div>
+          <p class="research-eyebrow" data-i18n="tre.citation.eyebrow">Citation</p>
+          <h2>Transportation Research Part E, 194.</h2>
+        </div>
+        <p>Julian Teusch, Bruno Neumann Saavedra, Yannick Oskar Scherr, and Jörg P. Müller. Strategic planning of geo-fenced micro-mobility facilities using reinforcement learning. Transportation Research Part E: Logistics and Transportation Review, 194, 103872, 2025. DOI: 10.1016/j.tre.2024.103872.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="research-footer">
+    <a href="../../">Julian Teusch</a>
+    <span>Geo-Fenced Mobility Facilities · TR-E</span>
+  </footer>
+
+  <script src="../../assets/language.js"></script>
+  <script src="../../assets/project-media.js"></script>
+</body>
+</html>

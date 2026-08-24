@@ -10,7 +10,12 @@ const OPENALEX_MAX_ATTEMPTS = 3;
 const OPENALEX_RETRY_DELAY_MS = 1_000;
 const STATIC_PAGE_URLS = [
   `${SITE_URL}/projects/sparc/`,
+  `${SITE_URL}/projects/clipper/`,
+  `${SITE_URL}/projects/geofenced-mobility-facilities/`,
 ];
+const PROJECT_PAGE_URLS = new Map([
+  ["10.1016/j.tre.2024.103872", `${SITE_URL}/projects/geofenced-mobility-facilities/`],
+]);
 
 OPENALEX_URL.searchParams.set("filter", `author.orcid:${ORCID}`);
 OPENALEX_URL.searchParams.set("sort", "publication_year:desc,publication_date:desc");
@@ -331,6 +336,7 @@ function renderPublicationPage(publication) {
     : { anchor: "publications", label: "All publications", translationKey: "paper.allPublications" };
   const abstract = publication.abstract || "The abstract is available on the linked record.";
   const abstractTranslation = publication.abstract ? "" : ' data-i18n="paper.abstractFallback"';
+  const projectPageUrl = PROJECT_PAGE_URLS.get(publication.doi?.toLowerCase());
   const publicationMetadata = [
     publication.venue && escapeHtml(publication.venue),
     publication.volume && `<span data-i18n="publication.volume" data-i18n-value="${escapeHtml(publication.volume)}">Vol. ${escapeHtml(publication.volume)}</span>`,
@@ -388,6 +394,8 @@ ${citationMeta.map(([name, value]) => `  <meta name="${name}" content="${escapeH
       <section class="paper-abstract"><h2 data-i18n="paper.abstract">Abstract</h2><p${abstractTranslation}>${escapeHtml(abstract)}</p></section>
       <p class="paper-links">
         <a href="${escapeHtml(publication.url)}">DOI</a>
+        ${projectPageUrl ? `<span aria-hidden="true"> · </span>
+        <a href="${escapeHtml(projectPageUrl)}" data-i18n="paper.projectPage">Project page</a>` : ""}
         <span aria-hidden="true"> · </span>
         <a href="../../#${section.anchor}" data-i18n="${section.translationKey}">${section.label}</a>
       </p>

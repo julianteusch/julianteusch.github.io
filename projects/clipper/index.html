@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CLIPPER enables replayable, constraint-exact spatial coverage planning under repeated policy edits." data-i18n-content="clipper.documentDescription">
+  <meta property="og:title" content="CLIPPER · Replayable Spatial Coverage Planning">
+  <meta property="og:description" content="Fast, replayable and constraint-exact planning under repeated spatial policy edits.">
+  <meta property="og:image" content="https://julianteusch.github.io/assets/projects/clipper/hero-planner.png">
+  <meta property="og:type" content="website">
+  <title>CLIPPER · Julian Teusch</title>
+  <link rel="canonical" href="https://julianteusch.github.io/projects/clipper/">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../assets/research-project.css">
+</head>
+<body class="research-project-page clipper-page">
+  <header class="research-header">
+    <a class="research-wordmark" href="../../">Julian Teusch</a>
+    <div class="research-header-actions">
+      <nav class="research-nav" aria-label="Project navigation" data-i18n-aria-label="project.nav.label">
+        <a href="#overview" data-i18n="project.nav.overview">Overview</a>
+        <a href="#workflow" data-i18n="project.nav.workflow">Workflow</a>
+        <a href="#replay" data-i18n="project.nav.replay">Replay</a>
+        <a href="#resources" data-i18n="project.nav.resources">Resources</a>
+      </nav>
+      <div class="language-switch" role="group" aria-label="Language selection" data-i18n-aria-label="language.switch">
+        <button class="language-button" type="button" data-lang-toggle="de" aria-pressed="false">DE</button>
+        <button class="language-button" type="button" data-lang-toggle="en" aria-pressed="true">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="research-hero" aria-labelledby="clipper-title">
+      <div class="research-hero-media" aria-hidden="true">
+        <img src="../../assets/projects/clipper/hero-planner.png" alt="">
+      </div>
+      <div class="research-hero-shade"></div>
+      <div class="research-hero-content">
+        <p class="research-status" data-i18n="clipper.status">ACM SIGSPATIAL 2026 · Research Track · Accepted / In Press</p>
+        <h1 id="clipper-title">
+          <span class="research-project-name">CLIPPER</span>
+          <span class="research-paper-title">Replayable Shortlisted Optimization for Repeated Spatial Coverage Planning</span>
+        </h1>
+        <p class="research-authors"><strong>Julian Teusch</strong> · Monika Sester · Jörg P. Müller</p>
+        <p class="research-summary" data-i18n="clipper.hero.summary">CLIPPER recomputes city-scale coverage plans after exclusions, locks, spacing rules or allocation caps change, while enforcing active hard constraints and recording every scenario for deterministic replay.</p>
+        <div class="research-actions">
+          <a class="primary-action" href="../../assets/projects/clipper/downloads/clipper-author-manuscript.pdf" data-i18n="clipper.action.paper">Author manuscript</a>
+          <a href="#replay" data-i18n="clipper.action.replay">Explore replay</a>
+          <a href="https://sigspatial2026.sigspatial.org/research-accepted/" data-i18n="clipper.action.acceptance">Accepted papers</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="research-section" id="overview">
+      <div class="research-section-inner">
+        <div class="research-intro">
+          <div>
+            <p class="research-eyebrow" data-i18n="clipper.overview.eyebrow">The planning problem</p>
+            <h2 data-i18n="clipper.overview.heading">A useful plan must survive the next policy edit.</h2>
+          </div>
+          <p class="research-lede" data-i18n="clipper.overview.body">Municipal parking-zone planning is not a one-shot optimization task. Stakeholders repeatedly add exclusions, retain existing sites, tighten spacing or revise allocation rules. CLIPPER separates recorded scenarios, bounded candidate generation, exact feasibility checks and missed-gain auditing so alternatives can be compared quickly and reproduced later.</p>
+        </div>
+        <div class="metric-strip" aria-label="Selected results" data-i18n-aria-label="clipper.metrics.label">
+          <div class="project-metric"><strong>13.6–28.9×</strong><span data-i18n="clipper.metric.speed">mean rollout-time speedup for CLIPPER-F</span></div>
+          <div class="project-metric"><strong>≤ 0.245 pp</strong><span data-i18n="clipper.metric.gap">mean coverage gap to same-policy full-set greedy</span></div>
+          <div class="project-metric"><strong>3</strong><span data-i18n="clipper.metric.cities">city-scale benchmarks: Braunschweig, Munich and Berlin</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="research-section research-soft" id="workflow">
+      <div class="research-section-inner">
+        <p class="research-eyebrow" data-i18n="clipper.workflow.eyebrow">Execution contract</p>
+        <h2 data-i18n="clipper.workflow.heading">Fast feedback without hiding the active constraints.</h2>
+        <div class="workflow-grid">
+          <article class="workflow-step">
+            <span class="workflow-number">01</span>
+            <h3 data-i18n="clipper.workflow.record.title">Record</h3>
+            <p data-i18n="clipper.workflow.record.body">Store the demand, candidates, policy settings and edit sequence as an explicit scenario.</p>
+          </article>
+          <article class="workflow-step">
+            <span class="workflow-number">02</span>
+            <h3 data-i18n="clipper.workflow.shortlist.title">Shortlist</h3>
+            <p data-i18n="clipper.workflow.shortlist.body">Construct bounded candidate pools from stable singleton-coverage rankings.</p>
+          </article>
+          <article class="workflow-step">
+            <span class="workflow-number">03</span>
+            <h3 data-i18n="clipper.workflow.check.title">Check</h3>
+            <p data-i18n="clipper.workflow.check.body">Evaluate current exact marginals and all active hard constraints before every insertion.</p>
+          </article>
+          <article class="workflow-step">
+            <span class="workflow-number">04</span>
+            <h3 data-i18n="clipper.workflow.audit.title">Audit</h3>
+            <p data-i18n="clipper.workflow.audit.body">Use conservative online screening and reserve exact full-set scans for offline or high-stakes checks.</p>
+          </article>
+          <article class="workflow-step">
+            <span class="workflow-number">05</span>
+            <h3 data-i18n="clipper.workflow.replay.title">Replay</h3>
+            <p data-i18n="clipper.workflow.replay.body">Re-run recorded inputs with deterministic ranking and tie rules to reproduce the plan fingerprint.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="research-section" id="replay">
+      <div class="research-section-inner">
+        <div class="research-intro">
+          <div>
+            <p class="research-eyebrow" data-i18n="clipper.replay.eyebrow">Braunschweig replay</p>
+            <h2 data-i18n="clipper.replay.heading">See what changes when the policy changes.</h2>
+          </div>
+          <p class="research-lede" data-i18n="clipper.replay.body">The same demand and candidate support are replayed as the scenario introduces forbidden sites, mandatory locks and minimum spacing. Switch between the recorded stages to inspect the resulting spatial plan.</p>
+        </div>
+
+        <div data-media-switcher>
+          <div class="project-media-switch" role="group" aria-label="Replay stage" data-i18n-aria-label="clipper.replay.selector">
+            <button type="button" data-media-button data-media-src="../../assets/projects/clipper/policy-demand.png" data-media-alt="clipper.replay.demand.alt" data-media-caption="clipper.replay.demand.caption" aria-pressed="true" data-i18n="clipper.replay.demand.button">Demand</button>
+            <button type="button" data-media-button data-media-src="../../assets/projects/clipper/policy-initial.png" data-media-alt="clipper.replay.initial.alt" data-media-caption="clipper.replay.initial.caption" aria-pressed="false" data-i18n="clipper.replay.initial.button">Initial plan</button>
+            <button type="button" data-media-button data-media-src="../../assets/projects/clipper/policy-edited.png" data-media-alt="clipper.replay.edited.alt" data-media-caption="clipper.replay.edited.caption" aria-pressed="false" data-i18n="clipper.replay.edited.button">Edited plan</button>
+            <button type="button" data-media-button data-media-src="../../assets/projects/clipper/policy-change.png" data-media-alt="clipper.replay.change.alt" data-media-caption="clipper.replay.change.caption" aria-pressed="false" data-i18n="clipper.replay.change.button">Changes</button>
+          </div>
+          <figure class="project-media-stage">
+            <img data-media-image src="../../assets/projects/clipper/policy-demand.png" alt="Demand points and feasible support in Braunschweig">
+            <figcaption data-media-caption data-i18n="clipper.replay.demand.caption">Trip endpoints and feasible candidate support.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="research-section research-soft">
+      <div class="research-section-inner">
+        <div class="media-copy-layout">
+          <div>
+            <p class="research-eyebrow" data-i18n="clipper.quality.eyebrow">Quality monitoring</p>
+            <h2 data-i18n="clipper.quality.heading">Shortlisting remains inspectable.</h2>
+          </div>
+          <p class="research-copy" data-i18n="clipper.quality.body">CLIPPER distinguishes fast online screening from exact offline auditing. The recorded edit chain shows that the shortlist can be expanded when the conservative proxy signals risk, while exact full-set checks remain available for high-stakes review.</p>
+        </div>
+        <figure class="wide-figure">
+          <img src="../../assets/projects/clipper/edit-chain.png" alt="Quality and proxy certificate values across sequential policy edits" data-i18n-alt="clipper.quality.figureAlt">
+          <figcaption data-i18n="clipper.quality.caption">Quality relative to full-set greedy remains stable across the replayed edit sequence.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="research-section" id="resources">
+      <div class="research-section-inner resource-layout">
+        <div>
+          <p class="research-eyebrow" data-i18n="clipper.resources.eyebrow">Resources</p>
+          <h2 data-i18n="clipper.resources.heading">Paper and acceptance record.</h2>
+        </div>
+        <div class="resource-list">
+          <a href="../../assets/projects/clipper/downloads/clipper-author-manuscript.pdf">
+            <span><strong data-i18n="clipper.resources.paper">Author manuscript</strong><small data-i18n="clipper.resources.paperDetail">Accepted research-track paper · 4 pages</small></span><span aria-hidden="true">↓</span>
+          </a>
+          <a href="https://sigspatial2026.sigspatial.org/research-accepted/">
+            <span><strong data-i18n="clipper.resources.acceptance">Official accepted-paper listing</strong><small>ACM SIGSPATIAL 2026</small></span><span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="research-citation">
+      <div class="research-section-inner citation-layout">
+        <div>
+          <p class="research-eyebrow" data-i18n="clipper.citation.eyebrow">Citation</p>
+          <h2 data-i18n="clipper.citation.heading">Accepted at ACM SIGSPATIAL 2026.</h2>
+        </div>
+        <p>Julian Teusch, Monika Sester, and Jörg P. Müller. CLIPPER: Replayable Shortlisted Optimization for Repeated Spatial Coverage Planning. 34th ACM SIGSPATIAL International Conference on Advances in Geographic Information Systems, 2026. In press.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="research-footer">
+    <a href="../../">Julian Teusch</a>
+    <span>CLIPPER · ACM SIGSPATIAL 2026</span>
+  </footer>
+
+  <script src="../../assets/language.js"></script>
+  <script src="../../assets/project-media.js"></script>
+</body>
+</html>
