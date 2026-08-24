@@ -6,7 +6,7 @@
   <meta name="description" content="Deep reinforcement learning for the strategic placement of parking, charging and battery-swapping facilities in urban micro-mobility systems." data-i18n-content="tre.documentDescription">
   <meta property="og:title" content="Geo-Fenced Mobility Facilities · Julian Teusch">
   <meta property="og:description" content="Strategic urban micro-mobility infrastructure planning with deep reinforcement learning.">
-  <meta property="og:image" content="https://julianteusch.github.io/assets/projects/geofenced-mobility-facilities/austin-demand.png">
+  <meta property="og:image" content="https://julianteusch.github.io/assets/projects/geofenced-mobility-facilities/hero-paris.webp">
   <meta property="og:type" content="article">
   <title>Geo-Fenced Mobility Facilities · Julian Teusch</title>
   <link rel="canonical" href="https://julianteusch.github.io/projects/geofenced-mobility-facilities/">
@@ -19,6 +19,7 @@
     <div class="research-header-actions">
       <nav class="research-nav" aria-label="Project navigation" data-i18n-aria-label="project.nav.label">
         <a href="#overview" data-i18n="project.nav.overview">Overview</a>
+        <a href="#impact" data-i18n="project.nav.impact">Impact</a>
         <a href="#method" data-i18n="project.nav.method">Method</a>
         <a href="#cities" data-i18n="project.nav.cities">Cities</a>
         <a href="#resources" data-i18n="project.nav.resources">Resources</a>
@@ -31,20 +32,21 @@
   </header>
 
   <main>
-    <section class="research-hero" aria-labelledby="tre-title">
-      <div class="research-hero-media" aria-hidden="true">
-        <img src="../../assets/projects/geofenced-mobility-facilities/austin-demand.png" alt="">
-        <img src="../../assets/projects/geofenced-mobility-facilities/louisville-demand.png" alt="">
+    <section class="research-hero tre-visual-hero" aria-labelledby="tre-title">
+      <div class="research-hero-media tre-hero-photos" aria-hidden="true">
+        <img src="../../assets/projects/geofenced-mobility-facilities/hero-paris.webp" alt="">
+        <img src="../../assets/projects/geofenced-mobility-facilities/hero-hanover.webp" alt="">
+        <img src="../../assets/projects/geofenced-mobility-facilities/hero-copenhagen.webp" alt="">
       </div>
       <div class="research-hero-shade"></div>
       <div class="research-hero-content">
         <p class="research-status" data-i18n="tre.status">Transportation Research Part E · Volume 194 · 2025</p>
         <h1 id="tre-title"><span class="research-paper-title">Strategic planning of geo-fenced micro-mobility facilities using reinforcement learning</span></h1>
         <p class="research-authors"><strong>Julian Teusch</strong> · Bruno Neumann Saavedra · Yannick Oskar Scherr · Jörg P. Müller</p>
-        <p class="research-summary" data-i18n="tre.hero.summary">A deep reinforcement-learning framework places parking, charging and battery-swapping facilities on real urban road networks while balancing demand coverage, convenience, budget and operational effort.</p>
+        <p class="research-summary" data-i18n="tre.hero.summary">A deep reinforcement-learning framework turns observed urban demand into budget-feasible plans for parking, charging and battery-swapping facilities.</p>
         <div class="research-actions">
           <a class="primary-action" href="https://doi.org/10.1016/j.tre.2024.103872">DOI</a>
-          <a href="#cities" data-i18n="tre.action.cities">Explore the cities</a>
+          <a href="#impact" data-i18n="tre.action.impact">See the Austin example</a>
           <a href="../../publications/2024-strategic-planning-of-geo-fenced-micro-mobility-facilities-using-reinforcement-learning/" data-i18n="tre.action.record">Publication record</a>
         </div>
       </div>
@@ -55,15 +57,45 @@
         <div class="research-intro">
           <div>
             <p class="research-eyebrow" data-i18n="tre.overview.eyebrow">The infrastructure problem</p>
-            <h2 data-i18n="tre.overview.heading">Where should a city invest its next mobility budget?</h2>
+            <h2 data-i18n="tre.overview.heading">Free-floating mobility is flexible. Its infrastructure is not.</h2>
           </div>
-          <p class="research-lede" data-i18n="tre.overview.body">Geo-fenced facilities can organize parking, support charging and simplify battery operations, but every location changes accessibility, coverage and repositioning effort. The framework represents these competing objectives in a configurable utility model and learns placement strategies on real road networks.</p>
+          <p class="research-lede" data-i18n="tre.overview.body">Without designated facilities, vehicles can obstruct public space and create long collection routes. Geo-fenced parking, charging and battery-swapping locations can improve order and accessibility, but cities must decide where to build, which facility type to choose and how much to invest.</p>
         </div>
-        <div class="metric-strip" aria-label="Selected results" data-i18n-aria-label="tre.metrics.label">
-          <div class="project-metric"><strong>163%</strong><span data-i18n="tre.metric.austin">improvement in parking-demand coverage in Austin</span></div>
-          <div class="project-metric"><strong>72%</strong><span data-i18n="tre.metric.louisville">improvement in parking-demand coverage in Louisville</span></div>
+        <div class="metric-strip tre-overview-metrics" aria-label="Study scope" data-i18n-aria-label="tre.metrics.label">
           <div class="project-metric"><strong>2.5M+</strong><span data-i18n="tre.metric.trips">real-world trips across both city datasets</span></div>
+          <div class="project-metric"><strong>€500K–€3M</strong><span data-i18n="tre.metric.budgets">six infrastructure budget levels</span></div>
           <div class="project-metric"><strong>3</strong><span data-i18n="tre.metric.facilities">facility types: parking, charging and battery swapping</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="research-section tre-impact-section" id="impact">
+      <div class="research-section-inner">
+        <div class="research-intro tre-impact-intro">
+          <div>
+            <p class="research-eyebrow" data-i18n="tre.impact.eyebrow">The Austin shift</p>
+            <h2 data-i18n="tre.impact.heading">Six stations turn a city-wide collection problem into a short route.</h2>
+          </div>
+          <p class="research-lede" data-i18n="tre.impact.body">In a one-square-kilometre Austin example, 263 vehicles are scattered across the street network. Restricting drop-offs to six strategically placed stations preserves convenient access while dramatically reducing the route required for collection and charging.</p>
+        </div>
+
+        <div class="route-comparison" data-route-comparison style="--route-split: 52%">
+          <div class="route-comparison-media">
+            <img class="route-before" src="../../assets/projects/geofenced-mobility-facilities/route-after.webp" alt="Collection route after introducing six strategically placed stations" data-i18n-alt="tre.impact.afterAlt">
+            <div class="route-after" data-route-after>
+              <img src="../../assets/projects/geofenced-mobility-facilities/route-before.webp" alt="Collection route for free-floating vehicles without stations" data-i18n-alt="tre.impact.beforeAlt">
+            </div>
+            <span class="route-label route-label-after" data-i18n="tre.impact.beforeLabel">Free-floating</span>
+            <span class="route-label route-label-before" data-i18n="tre.impact.afterLabel">6 stations</span>
+            <span class="route-divider" aria-hidden="true"></span>
+            <input type="range" min="10" max="90" value="52" aria-label="Compare the routes before and after station placement" data-i18n-aria-label="tre.impact.sliderLabel" data-route-slider>
+          </div>
+          <div class="route-result-grid" aria-label="Austin example results" data-i18n-aria-label="tre.impact.resultsLabel">
+            <div><strong>161.47 km</strong><span data-i18n="tre.impact.beforeMetric">collection route without stations</span></div>
+            <div><strong>263</strong><span data-i18n="tre.impact.vehiclesMetric">vehicles scattered across one square kilometre</span></div>
+            <div class="route-result-highlight"><strong>2.97 km</strong><span data-i18n="tre.impact.afterMetric">collection route with six stations</span></div>
+            <div><strong>&gt;95% · 250 m</strong><span data-i18n="tre.impact.coverageMetric">of vehicles remain within the walking threshold</span></div>
+          </div>
         </div>
       </div>
     </section>
@@ -71,37 +103,45 @@
     <section class="research-section research-soft" id="method">
       <div class="research-section-inner">
         <p class="research-eyebrow" data-i18n="tre.method.eyebrow">Planning framework</p>
-        <h2 data-i18n="tre.method.heading">From urban demand to a budget-feasible infrastructure plan.</h2>
-        <div class="workflow-grid">
+        <h2 data-i18n="tre.method.heading">From observed demand to a budget-feasible infrastructure plan.</h2>
+        <div class="workflow-grid tre-workflow-grid">
           <article class="workflow-step">
             <span class="workflow-number">01</span>
             <h3 data-i18n="tre.method.network.title">Model the city</h3>
-            <p data-i18n="tre.method.network.body">Combine road-network structure with observed parking and charging demand.</p>
+            <p data-i18n="tre.method.network.body">Combine the road network with observed parking and charging demand.</p>
           </article>
           <article class="workflow-step">
             <span class="workflow-number">02</span>
-            <h3 data-i18n="tre.method.utility.title">Define priorities</h3>
-            <p data-i18n="tre.method.utility.body">Configure benefits and losses for coverage, convenience, capacity and repositioning.</p>
+            <h3 data-i18n="tre.method.utility.title">Set priorities</h3>
+            <p data-i18n="tre.method.utility.body">Balance service coverage and convenience against capacity, cost and repositioning effort.</p>
           </article>
           <article class="workflow-step">
             <span class="workflow-number">03</span>
             <h3 data-i18n="tre.method.agent.title">Learn placements</h3>
-            <p data-i18n="tre.method.agent.body">Let the reinforcement-learning agent create, extend or relocate facilities.</p>
+            <p data-i18n="tre.method.agent.body">A Double Deep Q-Network creates, extends or relocates facilities.</p>
           </article>
           <article class="workflow-step">
             <span class="workflow-number">04</span>
             <h3 data-i18n="tre.method.plan.title">Compare plans</h3>
-            <p data-i18n="tre.method.plan.body">Evaluate budget scenarios and identify where additional investment reaches diminishing returns.</p>
+            <p data-i18n="tre.method.plan.body">Evaluate candidate plans across budgets and local policy priorities.</p>
           </article>
         </div>
-        <div class="figure-pair">
-          <figure>
-            <img src="../../assets/projects/geofenced-mobility-facilities/action-demand.png" alt="Demand-based creation of a micro-mobility facility" data-i18n-alt="tre.method.demandAlt" loading="lazy">
-            <figcaption data-i18n="tre.method.demandCaption">Demand-based actions prioritize nodes with the largest uncovered need.</figcaption>
-          </figure>
-          <figure>
-            <img src="../../assets/projects/geofenced-mobility-facilities/action-coverage.png" alt="Coverage-based creation of a micro-mobility facility" data-i18n-alt="tre.method.coverageAlt" loading="lazy">
-            <figcaption data-i18n="tre.method.coverageCaption">Coverage-based actions place facilities where they reach the largest uncovered area.</figcaption>
+
+        <div class="tre-planner-explorer" data-media-switcher>
+          <div class="tre-planner-copy">
+            <p class="research-eyebrow" data-i18n="tre.explorer.eyebrow">Inside the agent</p>
+            <h3 data-i18n="tre.explorer.heading">One network, several ways to improve it.</h3>
+            <p data-i18n="tre.explorer.body">The agent observes demand, then chooses actions that create or move facilities. The decision rule can focus on the largest uncovered demand or on the area reached by a new facility.</p>
+            <div class="project-media-switch tre-planner-switch" role="group" aria-label="Select planning action" data-i18n-aria-label="tre.explorer.selector">
+              <button type="button" data-media-button data-media-src="../../assets/projects/geofenced-mobility-facilities/planner-observe.webp" data-media-alt="tre.explorer.observe.alt" data-media-caption="tre.explorer.observe.caption" data-i18n="tre.explorer.observe.button" aria-pressed="true">Observe</button>
+              <button type="button" data-media-button data-media-src="../../assets/projects/geofenced-mobility-facilities/planner-demand.webp" data-media-alt="tre.explorer.demand.alt" data-media-caption="tre.explorer.demand.caption" data-i18n="tre.explorer.demand.button" aria-pressed="false">Demand</button>
+              <button type="button" data-media-button data-media-src="../../assets/projects/geofenced-mobility-facilities/planner-coverage.webp" data-media-alt="tre.explorer.coverage.alt" data-media-caption="tre.explorer.coverage.caption" data-i18n="tre.explorer.coverage.button" aria-pressed="false">Coverage</button>
+              <button type="button" data-media-button data-media-src="../../assets/projects/geofenced-mobility-facilities/planner-relocate.webp" data-media-alt="tre.explorer.relocate.alt" data-media-caption="tre.explorer.relocate.caption" data-i18n="tre.explorer.relocate.button" aria-pressed="false">Relocate</button>
+            </div>
+          </div>
+          <figure class="tre-planner-stage">
+            <img data-media-image src="../../assets/projects/geofenced-mobility-facilities/planner-observe.webp" alt="Demand observed across an urban road network" data-i18n-alt="tre.explorer.observe.alt">
+            <figcaption data-media-caption data-i18n="tre.explorer.observe.caption">The observation space combines network structure with demand at each node.</figcaption>
           </figure>
         </div>
       </div>
@@ -112,56 +152,96 @@
         <div class="research-intro">
           <div>
             <p class="research-eyebrow" data-i18n="tre.cities.eyebrow">Real-world evaluation</p>
-            <h2 data-i18n="tre.cities.heading">Two cities, two distinct demand landscapes.</h2>
+            <h2 data-i18n="tre.cities.heading">The same framework adapts to two very different cities.</h2>
           </div>
-          <p class="research-lede" data-i18n="tre.cities.body">Austin combines dense central demand with widely distributed outer areas, while Louisville exhibits a more concentrated pattern. Switching cities reveals why infrastructure strategies must adapt to local geography rather than reuse a single placement recipe.</p>
+          <p class="research-lede" data-i18n="tre.cities.body">Austin's demand is broad and heterogeneous; Louisville's is more centralized. Training on each city's own trips and road network produces locally tailored infrastructure strategies instead of transferring a single placement recipe.</p>
         </div>
-        <div data-media-switcher>
-          <div class="project-media-switch" role="group" aria-label="Select city" data-i18n-aria-label="tre.cities.selector">
-            <button type="button" data-media-button data-media-src="../../assets/projects/geofenced-mobility-facilities/austin-demand.png" data-media-alt="tre.cities.austin.alt" data-media-caption="tre.cities.austin.caption" aria-pressed="true">Austin</button>
-            <button type="button" data-media-button data-media-src="../../assets/projects/geofenced-mobility-facilities/louisville-demand.png" data-media-alt="tre.cities.louisville.alt" data-media-caption="tre.cities.louisville.caption" aria-pressed="false">Louisville</button>
-          </div>
-          <figure class="project-media-stage">
-            <img data-media-image src="../../assets/projects/geofenced-mobility-facilities/austin-demand.png" alt="Parking demand across the Austin road network">
-            <figcaption data-media-caption data-i18n="tre.cities.austin.caption">Spatial distribution of parking demand across Austin's extended road network.</figcaption>
-          </figure>
+
+        <div class="city-comparison-grid">
+          <article class="city-profile">
+            <div class="city-profile-media">
+              <img src="../../assets/projects/geofenced-mobility-facilities/austin-city.webp" alt="Parking-demand pattern on Austin's road network" data-i18n-alt="tre.cities.austin.alt">
+              <div><span data-i18n="tre.cities.cityLabel">City dataset</span><strong>Austin, Texas</strong></div>
+            </div>
+            <div class="city-profile-results">
+              <p data-i18n="tre.cities.austin.pattern">Distributed demand with dense central and southern hotspots.</p>
+              <dl>
+                <div><dt data-i18n="tre.cities.trips">Trips</dt><dd>2M+</dd></div>
+                <div><dt data-i18n="tre.cities.nodes">Road nodes</dt><dd>3,240</dd></div>
+                <div><dt data-i18n="tre.cities.edges">Road edges</dt><dd>9,149</dd></div>
+                <div class="city-gain"><dt data-i18n="tre.cities.peakGain">Peak parking-coverage gain</dt><dd>+163%</dd></div>
+              </dl>
+            </div>
+          </article>
+
+          <article class="city-profile">
+            <div class="city-profile-media">
+              <img src="../../assets/projects/geofenced-mobility-facilities/louisville-city.webp" alt="Parking-demand pattern on Louisville's road network" data-i18n-alt="tre.cities.louisville.alt">
+              <div><span data-i18n="tre.cities.cityLabel">City dataset</span><strong>Louisville, Kentucky</strong></div>
+            </div>
+            <div class="city-profile-results">
+              <p data-i18n="tre.cities.louisville.pattern">More centralized demand across a larger road graph.</p>
+              <dl>
+                <div><dt data-i18n="tre.cities.trips">Trips</dt><dd>500K</dd></div>
+                <div><dt data-i18n="tre.cities.nodes">Road nodes</dt><dd>4,200</dd></div>
+                <div><dt data-i18n="tre.cities.edges">Road edges</dt><dd>12,064</dd></div>
+                <div class="city-gain"><dt data-i18n="tre.cities.peakGain">Peak parking-coverage gain</dt><dd>+72%</dd></div>
+              </dl>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
     <section class="research-section research-soft">
       <div class="research-section-inner">
-        <div class="media-copy-layout">
+        <div class="research-intro">
           <div>
-            <p class="research-eyebrow" data-i18n="tre.budget.eyebrow">Budget scenarios</p>
-            <h2 data-i18n="tre.budget.heading">Coverage rises, but returns eventually diminish.</h2>
+            <p class="research-eyebrow" data-i18n="tre.tradeoffs.eyebrow">Planning trade-offs</p>
+            <h2 data-i18n="tre.tradeoffs.heading">A bigger budget helps, but every objective moves differently.</h2>
           </div>
-          <p class="research-copy" data-i18n="tre.budget.body">Across budgets from B500K to B3M, parking and charging coverage generally improve while average distances and operational effort expose different trade-offs. The pattern differs between Austin and Louisville, reinforcing the need for locally configurable objectives.</p>
+          <p class="research-lede" data-i18n="tre.tradeoffs.body">Across six budgets, additional facilities generally improve coverage and shorten users' distance to the nearest facility. At the same time, a wider infrastructure network can increase collection and redistribution effort. Returns diminish once high-demand areas are saturated.</p>
         </div>
-        <figure class="wide-figure">
-          <img src="../../assets/projects/geofenced-mobility-facilities/budget-results.png" alt="Budget effects on coverage and distance metrics in Austin and Louisville" data-i18n-alt="tre.budget.figureAlt">
-          <figcaption data-i18n="tre.budget.caption">Mean coverage and normalized distance metrics across six budget levels.</figcaption>
-        </figure>
+
+        <div class="tre-trend-visual" aria-label="Observed effects of increasing infrastructure budgets" data-i18n-aria-label="tre.tradeoffs.visualLabel">
+          <div class="tre-budget-axis" aria-hidden="true">
+            <span></span>
+            <div><strong>€500K</strong><i></i><i></i><i></i><i></i><strong>€3M</strong></div>
+            <span></span>
+          </div>
+          <div class="tre-trend-row tre-trend-up">
+            <div><strong data-i18n="tre.tradeoffs.coverage.title">Service coverage</strong><span data-i18n="tre.tradeoffs.coverage.detail">More parking and charging demand reached</span></div>
+            <div class="tre-trend-line"><span></span></div>
+            <b data-i18n="tre.tradeoffs.rises">Rises</b>
+          </div>
+          <div class="tre-trend-row tre-trend-down">
+            <div><strong data-i18n="tre.tradeoffs.distance.title">Distance to a facility</strong><span data-i18n="tre.tradeoffs.distance.detail">More convenient access for users</span></div>
+            <div class="tre-trend-line"><span></span></div>
+            <b data-i18n="tre.tradeoffs.falls">Falls</b>
+          </div>
+          <div class="tre-trend-row tre-trend-cost">
+            <div><strong data-i18n="tre.tradeoffs.operations.title">Operational network</strong><span data-i18n="tre.tradeoffs.operations.detail">More locations to collect from and redistribute between</span></div>
+            <div class="tre-trend-line"><span></span></div>
+            <b data-i18n="tre.tradeoffs.tradeoff">Trade-off</b>
+          </div>
+        </div>
+
+        <div class="utility-balance">
+          <div>
+            <p class="research-eyebrow" data-i18n="tre.utility.eyebrow">Configurable utility</p>
+            <h3 data-i18n="tre.utility.heading">The planner makes local priorities explicit.</h3>
+          </div>
+          <div class="utility-components">
+            <span class="utility-positive" data-i18n="tre.utility.coverage">Coverage</span>
+            <span class="utility-positive" data-i18n="tre.utility.convenience">Convenience</span>
+            <span class="utility-negative" data-i18n="tre.utility.capacity">Capacity shortage</span>
+            <span class="utility-negative" data-i18n="tre.utility.repositioning">Repositioning effort</span>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="research-section">
-      <div class="research-section-inner">
-        <div class="media-copy-layout">
-          <div>
-            <p class="research-eyebrow" data-i18n="tre.tradeoffs.eyebrow">Local priorities</p>
-            <h2 data-i18n="tre.tradeoffs.heading">There is no universally best utility function.</h2>
-          </div>
-          <p class="research-copy" data-i18n="tre.tradeoffs.body">Coverage-focused strategies favor service reach, while capacity, convenience and repositioning terms change which facility portfolio is preferred. The configurable objective lets planners make those priorities explicit rather than burying them inside the optimizer.</p>
-        </div>
-        <figure class="wide-figure">
-          <img src="../../assets/projects/geofenced-mobility-facilities/utility-tradeoffs.png" alt="Utility-function trade-offs for Austin and Louisville" data-i18n-alt="tre.tradeoffs.figureAlt">
-          <figcaption data-i18n="tre.tradeoffs.caption">Normalized outcomes for alternative utility-function configurations in Austin and Louisville.</figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <section class="research-section research-soft" id="resources">
+    <section class="research-section" id="resources">
       <div class="research-section-inner resource-layout">
         <div>
           <p class="research-eyebrow" data-i18n="tre.resources.eyebrow">Resources</p>
@@ -196,5 +276,6 @@
 
   <script src="../../assets/language.js"></script>
   <script src="../../assets/project-media.js"></script>
+  <script src="../../assets/tre-project.js"></script>
 </body>
 </html>
