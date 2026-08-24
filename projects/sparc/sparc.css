@@ -381,6 +381,44 @@
   color: #b8c7ce;
 }
 
+.deck-switch {
+  display: inline-grid;
+  grid-template-columns: repeat(2, minmax(150px, 1fr));
+  gap: 2px;
+  margin-bottom: 14px;
+  padding: 3px;
+  border: 1px solid #40515b;
+  border-radius: 5px;
+  background: #0f181e;
+}
+
+.deck-switch button {
+  min-height: 38px;
+  padding: 7px 14px;
+  border: 0;
+  border-radius: 3px;
+  color: #b8c7ce;
+  background: transparent;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.deck-switch button:hover {
+  color: #fff;
+}
+
+.deck-switch button[aria-pressed="true"] {
+  color: #0d2b1e;
+  background: #81d8a9;
+}
+
+.deck-switch button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: -2px;
+}
+
 .slide-player {
   overflow: hidden;
   border: 1px solid #40515b;
@@ -741,6 +779,12 @@
   .slide-animation-overlay {
     top: 28%;
     height: 43%;
+  }
+
+  .deck-switch {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
   }
 
   .project-footer {
