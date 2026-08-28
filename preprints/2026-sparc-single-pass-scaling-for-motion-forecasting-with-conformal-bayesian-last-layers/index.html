@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SPARC: Single-Pass Scaling for Motion Forecasting with Conformal Bayesian Last Layers | Julian Teusch</title>
+  <meta name="description" content="Human motion forecasters are increasingly accurate and fast, but reliable deployment requires uncertainty estimates that are structured, calibrated, and efficient. Bayesian and ensemble-based uncertainty estimates often require repeated stochastic inference [15, 26], while conformal calibration alone does not provide an epistemic signal or preserve trajectory covariance structure [14, 50]. We introduce SPARC (Single-Pass Adaptive Risk Calibration), a Bayesian-conformal uncertainty layer for motion forecasting. A deterministic MLP backbone predicts the future mean, and a conjugate Bayesian last layer converts time-domain feature leverage into an analytic horizon-wise epistemic scale $κ_t(x)$. This scale inflates a graph-temporal Gaussian covariance without changing its correlation structure, and split conformal calibration produces 95% marginal prediction tubes with finite-sample validity under exchangeability. The key interface is the structured factorization $κ_t(x)Σ_{\mathrm{str},t}(x)$, which injects feature-space epistemic uncertainty into trajectory densities without Monte Carlo sampling. Across nine dataset-protocol blocks and deterministic, multimodal, and calibration baselines, SPARC ranks first on NLL and on the combined MPJPE+NLL criterion while retaining competitive point accuracy and efficient calibrated tubes. Ranking windows by $κ$ separates high-error cases, making the scale usable as a lightweight risk monitor.">
+  <meta name="citation_title" content="SPARC: Single-Pass Scaling for Motion Forecasting with Conformal Bayesian Last Layers">
+  <meta name="citation_author" content="Sakif Hossain">
+  <meta name="citation_author" content="Julian Teusch">
+  <meta name="citation_author" content="Jörg P. Müller">
+  <meta name="citation_publication_date" content="2026-08-21">
+  <meta name="citation_journal_title" content="arXiv">
+  <meta name="citation_doi" content="10.48550/arxiv.2608.20802">
+  <meta name="citation_online_date" content="2026-08-21">
+  <meta name="citation_abstract_html_url" content="https://julianteusch.github.io/preprints/2026-sparc-single-pass-scaling-for-motion-forecasting-with-conformal-bayesian-last-layers/">
+  <link rel="canonical" href="https://julianteusch.github.io/preprints/2026-sparc-single-pass-scaling-for-motion-forecasting-with-conformal-bayesian-last-layers/">
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+  <main class="site-shell publication-page">
+    <nav class="topbar" aria-label="Main navigation" data-i18n-aria-label="nav.label">
+      <a class="wordmark" href="../../">Julian Teusch</a>
+      <div class="topbar-actions">
+        <div class="nav-links">
+          <a href="../../#about" data-i18n="nav.about">About</a>
+          <a href="../../#bio" data-i18n="nav.bio">Bio</a>
+          <a href="../../#projects" data-i18n="nav.projects">Projects</a>
+          <a href="../../#publications" data-i18n="nav.publications">Publications</a>
+          <a href="../../#preprints" data-i18n="nav.preprints">Preprints</a>
+          <a href="../../#contact" data-i18n="nav.contact">Contact</a>
+        </div>
+        <div class="language-switch" role="group" aria-label="Language selection" data-i18n-aria-label="language.switch">
+          <button class="language-button" type="button" data-lang-toggle="de" aria-pressed="false">DE</button>
+          <button class="language-button" type="button" data-lang-toggle="en" aria-pressed="true">EN</button>
+        </div>
+      </div>
+    </nav>
+    <article class="paper-detail">
+      <p class="eyebrow">2026</p>
+      <h1>SPARC: Single-Pass Scaling for Motion Forecasting with Conformal Bayesian Last Layers</h1>
+      <p class="paper-authors">Sakif Hossain, <strong>Julian Teusch</strong>, Jörg P. Müller</p>
+      <p class="publication-meta">arXiv</p>
+      <section class="paper-abstract"><h2 data-i18n="paper.abstract">Abstract</h2><p>Human motion forecasters are increasingly accurate and fast, but reliable deployment requires uncertainty estimates that are structured, calibrated, and efficient. Bayesian and ensemble-based uncertainty estimates often require repeated stochastic inference [15, 26], while conformal calibration alone does not provide an epistemic signal or preserve trajectory covariance structure [14, 50]. We introduce SPARC (Single-Pass Adaptive Risk Calibration), a Bayesian-conformal uncertainty layer for motion forecasting. A deterministic MLP backbone predicts the future mean, and a conjugate Bayesian last layer converts time-domain feature leverage into an analytic horizon-wise epistemic scale $κ_t(x)$. This scale inflates a graph-temporal Gaussian covariance without changing its correlation structure, and split conformal calibration produces 95% marginal prediction tubes with finite-sample validity under exchangeability. The key interface is the structured factorization $κ_t(x)Σ_{\mathrm{str},t}(x)$, which injects feature-space epistemic uncertainty into trajectory densities without Monte Carlo sampling. Across nine dataset-protocol blocks and deterministic, multimodal, and calibration baselines, SPARC ranks first on NLL and on the combined MPJPE+NLL criterion while retaining competitive point accuracy and efficient calibrated tubes. Ranking windows by $κ$ separates high-error cases, making the scale usable as a lightweight risk monitor.</p></section>
+      <p class="paper-links">
+        <a href="https://arxiv.org/abs/2608.20802">arXiv</a>
+        <span aria-hidden="true"> · </span>
+        <a href="https://julianteusch.github.io/projects/sparc/" data-i18n="paper.projectPage">Project page</a>
+        <span aria-hidden="true"> · </span>
+        <a href="../../#preprints" data-i18n="paper.allPreprints">All preprints</a>
+      </p>
+    </article>
+  </main>
+  <script src="../../assets/language.js"></script>
+  <!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"f2b294e5d1904898a65f5b61f3ee6893"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

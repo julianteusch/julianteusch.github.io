@@ -1,8 +1,8 @@
 {
-  "source": "OpenAlex",
+  "source": "OpenAlex and curated records",
   "source_url": "https://openalex.org/authors/orcid:0000-0002-4103-8430",
   "orcid": "0000-0002-4103-8430",
-  "updated_at": "2026-08-24T05:53:36.746Z",
+  "updated_at": "2026-08-28T05:51:21.320Z",
   "publications": [
     {
       "title": "Throttle or Thwart? The effect of local policy regulations on micromobility demand – A Difference-in-Differences approach",
@@ -28,6 +28,30 @@
       "citations": 0,
       "abstract": "This study investigates the impact of local micromobility regulations on service demand in German cities. Using robust Difference-in-Differences (DiD) analyses we analyze the impact of two different policy regulations 30 days before and after their implementation. Our findings suggest that fleet size caps significantly reduce total trips without affecting average utilization, while parking zone policies have no measurable impact on either metric. These results highlight the trade-offs between supply-side restrictions and operational rules, offering actionable insights for urban mobility governance. The study underscores the importance of balancing regulatory measures to address public concerns without stifling micromobility’s benefits. Future research could explore long-term impacts, user adaptation, and environmental outcomes to further inform policy design.",
       "type": "Publication"
+    },
+    {
+      "title": "Unlocking Capacity: The Role of Online Platforms in Optimizing Capacity Utilization of Access-based Services",
+      "year": 2025,
+      "date": "2025-02-16",
+      "slug": "2025-unlocking-capacity-the-role-of-online-platforms-in-optimizing-capacity-utilization-of-a",
+      "page_url": "https://julianteusch.github.io/publications/2025-unlocking-capacity-the-role-of-online-platforms-in-optimizing-capacity-utilization-of-a/",
+      "authors": [
+        "Jan N. Gremmel",
+        "Julian Teusch",
+        "Christian Koetsier",
+        "David M. Woisetschläger",
+        "Jörg P. Müller",
+        "Monika Sester"
+      ],
+      "venue": "2025 American Marketing Association Winter Academic Conference",
+      "doi": null,
+      "url": "https://zdin.digital/zukunftslabore/mobilitaet",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "citations": 0,
+      "abstract": "This conference paper examines how membership in third-party online platforms shapes capacity utilization among access-based micromobility service providers, accounting for platform benefits, pricing and distribution decisions, and market conditions.",
+      "type": "Conference Paper"
     },
     {
       "title": "Spatial-Temporal Patterns of E-Scooter Demand Prediction Across Cities",
@@ -122,6 +146,48 @@
     }
   ],
   "preprints": [
+    {
+      "title": "CLIPPER: Replayable Shortlisted Optimization for Repeated Spatial Coverage Planning",
+      "year": 2026,
+      "date": "2026-08-27",
+      "slug": "2026-clipper-replayable-shortlisted-optimization-for-repeated-spatial-coverage-planning",
+      "page_url": "https://julianteusch.github.io/preprints/2026-clipper-replayable-shortlisted-optimization-for-repeated-spatial-coverage-planning/",
+      "authors": [
+        "Julian Teusch",
+        "Jörg Philipp Müller",
+        "Monika Sester"
+      ],
+      "venue": "arXiv",
+      "doi": "10.48550/arxiv.2608.26819",
+      "url": "https://arxiv.org/abs/2608.26819",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "citations": 0,
+      "abstract": "Operational requirements developed with the City of Braunschweig frame municipal micromobility planning under geofenced exclusions, mandatory retained sites, spacing rules, and area-level caps. CLIPPER forms bounded candidate pools while recomputing exact current gains and checking every active constraint before selection. Across Braunschweig, Munich, and Berlin, it enables rapid, replayable comparison of recorded city-scale planning states while enforcing every encoded model constraint.",
+      "type": "Preprint"
+    },
+    {
+      "title": "SPARC: Single-Pass Scaling for Motion Forecasting with Conformal Bayesian Last Layers",
+      "year": 2026,
+      "date": "2026-08-21",
+      "slug": "2026-sparc-single-pass-scaling-for-motion-forecasting-with-conformal-bayesian-last-layers",
+      "page_url": "https://julianteusch.github.io/preprints/2026-sparc-single-pass-scaling-for-motion-forecasting-with-conformal-bayesian-last-layers/",
+      "authors": [
+        "Sakif Hossain",
+        "Julian Teusch",
+        "Jörg P. Müller"
+      ],
+      "venue": "arXiv",
+      "doi": "10.48550/arxiv.2608.20802",
+      "url": "https://arxiv.org/abs/2608.20802",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "citations": 0,
+      "abstract": "Human motion forecasters are increasingly accurate and fast, but reliable deployment requires uncertainty estimates that are structured, calibrated, and efficient. Bayesian and ensemble-based uncertainty estimates often require repeated stochastic inference [15, 26], while conformal calibration alone does not provide an epistemic signal or preserve trajectory covariance structure [14, 50]. We introduce SPARC (Single-Pass Adaptive Risk Calibration), a Bayesian-conformal uncertainty layer for motion forecasting. A deterministic MLP backbone predicts the future mean, and a conjugate Bayesian last layer converts time-domain feature leverage into an analytic horizon-wise epistemic scale $κ_t(x)$. This scale inflates a graph-temporal Gaussian covariance without changing its correlation structure, and split conformal calibration produces 95% marginal prediction tubes with finite-sample validity under exchangeability. The key interface is the structured factorization $κ_t(x)Σ_{\\mathrm{str},t}(x)$, which injects feature-space epistemic uncertainty into trajectory densities without Monte Carlo sampling. Across nine dataset-protocol blocks and deterministic, multimodal, and calibration baselines, SPARC ranks first on NLL and on the combined MPJPE+NLL criterion while retaining competitive point accuracy and efficient calibrated tubes. Ranking windows by $κ$ separates high-error cases, making the scale usable as a lightweight risk monitor.",
+      "type": "Preprint"
+    },
     {
       "title": "EviNAM: Intelligibility and Uncertainty via Evidential Neural Additive Models",
       "year": 2026,
