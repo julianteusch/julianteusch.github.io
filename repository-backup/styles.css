@@ -1,0 +1,14 @@
+@import url("../styles.css");
+
+.repository-backup-shell {
+  display: block;
+  width: min(680px, calc(100% - 48px));
+}
+
+.repository-backup-shell .content-column {
+  width: 100%;
+}
+
+.repository-backup-shell .section-body > h2 {
+  margin-top: 30px;
+}
