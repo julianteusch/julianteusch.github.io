@@ -15,10 +15,24 @@ const STATIC_PAGE_URLS = [
 ];
 const PROJECT_PAGE_URLS = new Map([
   ["10.1016/j.tre.2024.103872", `${SITE_URL}/projects/geofenced-mobility-facilities/`],
+  ["10.1007/978-3-032-37350-2_6", `${SITE_URL}/projects/sparc/`],
   ["10.48550/arxiv.2608.20802", `${SITE_URL}/projects/sparc/`],
   ["10.48550/arxiv.2608.26819", `${SITE_URL}/projects/clipper/`],
 ]);
 const CURATED_PUBLICATIONS = [
+  {
+    title: "SPARC: Single-Pass Scaling for Motion Forecasting with Conformal Bayesian Last Layers",
+    year: 2026,
+    date: "2026-09-22",
+    authors: ["Sakif Hossain", "Julian Teusch", "Jörg P. Müller"],
+    venue: "European Conference on Computer Vision (ECCV 2026)",
+    doi: "10.1007/978-3-032-37350-2_6",
+    url: "https://doi.org/10.1007/978-3-032-37350-2_6",
+    volume: "17011",
+    pages: "94-112",
+    abstract: "Human motion forecasters are increasingly accurate and fast, but reliable deployment requires uncertainty estimates that are structured, calibrated, and efficient. SPARC introduces a Bayesian-conformal uncertainty layer for motion forecasting: a deterministic backbone predicts the future mean, while a conjugate Bayesian last layer converts feature leverage into an analytic horizon-wise epistemic scale. This scale augments structured trajectory covariance without Monte Carlo sampling, and split conformal calibration produces prediction tubes with finite-sample validity under exchangeability.",
+    type: "Conference Paper",
+  },
   {
     title: "Unlocking Capacity: The Role of Online Platforms in Optimizing Capacity Utilization of Access-based Services",
     year: 2025,

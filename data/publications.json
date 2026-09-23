@@ -2,8 +2,29 @@
   "source": "OpenAlex and curated records",
   "source_url": "https://openalex.org/authors/orcid:0000-0002-4103-8430",
   "orcid": "0000-0002-4103-8430",
-  "updated_at": "2026-09-14T10:39:05.392Z",
+  "updated_at": "2026-09-23T07:57:50.000Z",
   "publications": [
+    {
+      "title": "SPARC: Single-Pass Scaling for Motion Forecasting with Conformal Bayesian Last Layers",
+      "year": 2026,
+      "date": "2026-09-22",
+      "slug": "2026-sparc-single-pass-scaling-for-motion-forecasting-with-conformal-bayesian-last-layers",
+      "page_url": "https://julianteusch.github.io/publications/2026-sparc-single-pass-scaling-for-motion-forecasting-with-conformal-bayesian-last-layers/",
+      "authors": [
+        "Sakif Hossain",
+        "Julian Teusch",
+        "Jörg P. Müller"
+      ],
+      "venue": "European Conference on Computer Vision (ECCV 2026)",
+      "doi": "10.1007/978-3-032-37350-2_6",
+      "url": "https://doi.org/10.1007/978-3-032-37350-2_6",
+      "volume": "17011",
+      "issue": "",
+      "pages": "94-112",
+      "citations": 0,
+      "abstract": "Human motion forecasters are increasingly accurate and fast, but reliable deployment requires uncertainty estimates that are structured, calibrated, and efficient. SPARC introduces a Bayesian-conformal uncertainty layer for motion forecasting: a deterministic backbone predicts the future mean, while a conjugate Bayesian last layer converts feature leverage into an analytic horizon-wise epistemic scale. This scale augments structured trajectory covariance without Monte Carlo sampling, and split conformal calibration produces prediction tubes with finite-sample validity under exchangeability.",
+      "type": "Conference Paper"
+    },
     {
       "title": "Throttle or Thwart? The effect of local policy regulations on micromobility demand – A Difference-in-Differences approach",
       "year": 2026,
