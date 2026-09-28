@@ -2,12 +2,12 @@
   "source": "OpenAlex and curated records",
   "source_url": "https://openalex.org/authors/orcid:0000-0002-4103-8430",
   "orcid": "0000-0002-4103-8430",
-  "updated_at": "2026-09-23T07:57:50.000Z",
+  "updated_at": "2026-09-28T11:41:48.965Z",
   "publications": [
     {
       "title": "SPARC: Single-Pass Scaling for Motion Forecasting with Conformal Bayesian Last Layers",
       "year": 2026,
-      "date": "2026-09-22",
+      "date": "2026-01-01",
       "slug": "2026-sparc-single-pass-scaling-for-motion-forecasting-with-conformal-bayesian-last-layers",
       "page_url": "https://julianteusch.github.io/publications/2026-sparc-single-pass-scaling-for-motion-forecasting-with-conformal-bayesian-last-layers/",
       "authors": [
@@ -15,15 +15,15 @@
         "Julian Teusch",
         "Jörg P. Müller"
       ],
-      "venue": "European Conference on Computer Vision (ECCV 2026)",
+      "venue": "Lecture notes in computer science",
       "doi": "10.1007/978-3-032-37350-2_6",
       "url": "https://doi.org/10.1007/978-3-032-37350-2_6",
-      "volume": "17011",
+      "volume": "",
       "issue": "",
       "pages": "94-112",
       "citations": 0,
-      "abstract": "Human motion forecasters are increasingly accurate and fast, but reliable deployment requires uncertainty estimates that are structured, calibrated, and efficient. SPARC introduces a Bayesian-conformal uncertainty layer for motion forecasting: a deterministic backbone predicts the future mean, while a conjugate Bayesian last layer converts feature leverage into an analytic horizon-wise epistemic scale. This scale augments structured trajectory covariance without Monte Carlo sampling, and split conformal calibration produces prediction tubes with finite-sample validity under exchangeability.",
-      "type": "Conference Paper"
+      "abstract": "",
+      "type": "Publication"
     },
     {
       "title": "Throttle or Thwart? The effect of local policy regulations on micromobility demand – A Difference-in-Differences approach",
@@ -33,7 +33,7 @@
       "page_url": "https://julianteusch.github.io/publications/2026-throttle-or-thwart-the-effect-of-local-policy-regulations-on-micromobility-demand-a-dif/",
       "authors": [
         "Zeeshan Asghar",
-        "Jan N. Gremmel",
+        "Jan  Niklas Gremmel",
         "Julian Teusch",
         "Christian Koetsier",
         "David M. Woisetschläger",
@@ -104,7 +104,7 @@
       "page_url": "https://julianteusch.github.io/publications/2024-strategic-planning-of-geo-fenced-micro-mobility-facilities-using-reinforcement-learning/",
       "authors": [
         "Julian Teusch",
-        "Bruno Neumann Saavedra",
+        "Bruno Albert Neumann-Saavedra",
         "Yannick Oskar Scherr",
         "Jörg P. Müller"
       ],
@@ -148,7 +148,7 @@
       "page_url": "https://julianteusch.github.io/publications/2023-a-systematic-literature-review-on-machine-learning-in-shared-mobility/",
       "authors": [
         "Julian Teusch",
-        "Jan N. Gremmel",
+        "Jan  Niklas Gremmel",
         "Christian Koetsier",
         "Fatema Tuj Johora",
         "Monika Sester",
@@ -175,7 +175,7 @@
       "page_url": "https://julianteusch.github.io/preprints/2026-clipper-replayable-shortlisted-optimization-for-repeated-spatial-coverage-planning/",
       "authors": [
         "Julian Teusch",
-        "Jörg Philipp Müller",
+        "Jörg P. Müller",
         "Monika Sester"
       ],
       "venue": "arXiv",
@@ -206,7 +206,7 @@
       "issue": "",
       "pages": "",
       "citations": 0,
-      "abstract": "Human motion forecasters are increasingly accurate and fast, but reliable deployment requires uncertainty estimates that are structured, calibrated, and efficient. Bayesian and ensemble-based uncertainty estimates often require repeated stochastic inference [15, 26], while conformal calibration alone does not provide an epistemic signal or preserve trajectory covariance structure [14, 50]. We introduce SPARC (Single-Pass Adaptive Risk Calibration), a Bayesian-conformal uncertainty layer for motion forecasting. A deterministic MLP backbone predicts the future mean, and a conjugate Bayesian last layer converts time-domain feature leverage into an analytic horizon-wise epistemic scale $κ_t(x)$. This scale inflates a graph-temporal Gaussian covariance without changing its correlation structure, and split conformal calibration produces 95% marginal prediction tubes with finite-sample validity under exchangeability. The key interface is the structured factorization $κ_t(x)Σ_{\\mathrm{str},t}(x)$, which injects feature-space epistemic uncertainty into trajectory densities without Monte Carlo sampling. Across nine dataset-protocol blocks and deterministic, multimodal, and calibration baselines, SPARC ranks first on NLL and on the combined MPJPE+NLL criterion while retaining competitive point accuracy and efficient calibrated tubes. Ranking windows by $κ$ separates high-error cases, making the scale usable as a lightweight risk monitor.",
+      "abstract": "Human motion forecasters are increasingly accurate and fast, but reliable deployment requires uncertainty estimates that are structured, calibrated, and efficient. SPARC introduces a Bayesian-conformal uncertainty layer for motion forecasting: a deterministic backbone predicts the future mean, while a conjugate Bayesian last layer converts feature leverage into an analytic horizon-wise epistemic scale. This scale augments structured trajectory covariance without Monte Carlo sampling, and split conformal calibration produces prediction tubes with finite-sample validity under exchangeability.",
       "type": "Preprint"
     },
     {
@@ -224,7 +224,7 @@
       ],
       "venue": "arXiv",
       "doi": "10.48550/arxiv.2601.08556",
-      "url": "https://doi.org/10.48550/arxiv.2601.08556",
+      "url": "http://arxiv.org/abs/2601.08556",
       "volume": "",
       "issue": "",
       "pages": "",
@@ -240,7 +240,7 @@
       "page_url": "https://julianteusch.github.io/preprints/2026-regulating-the-curb-with-geofenced-parking-evidence-on-the-friction-reliability-trade-o/",
       "authors": [
         "Julian Teusch",
-        "Jan N. Gremmel",
+        "Jan  Niklas Gremmel",
         "Sören Schleibaum",
         "Jörg P. Müller",
         "David M. Woisetschläger"
