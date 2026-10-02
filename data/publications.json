@@ -2,7 +2,7 @@
   "source": "OpenAlex and curated records",
   "source_url": "https://openalex.org/authors/orcid:0000-0002-4103-8430",
   "orcid": "0000-0002-4103-8430",
-  "updated_at": "2026-09-23T07:57:50.000Z",
+  "updated_at": "2026-10-02T09:55:09.723Z",
   "publications": [
     {
       "title": "SPARC: Single-Pass Scaling for Motion Forecasting with Conformal Bayesian Last Layers",
@@ -33,7 +33,7 @@
       "page_url": "https://julianteusch.github.io/publications/2026-throttle-or-thwart-the-effect-of-local-policy-regulations-on-micromobility-demand-a-dif/",
       "authors": [
         "Zeeshan Asghar",
-        "Jan N. Gremmel",
+        "Jan  Niklas Gremmel",
         "Julian Teusch",
         "Christian Koetsier",
         "David M. Woisetschläger",
@@ -104,7 +104,7 @@
       "page_url": "https://julianteusch.github.io/publications/2024-strategic-planning-of-geo-fenced-micro-mobility-facilities-using-reinforcement-learning/",
       "authors": [
         "Julian Teusch",
-        "Bruno Neumann Saavedra",
+        "Bruno Albert Neumann-Saavedra",
         "Yannick Oskar Scherr",
         "Jörg P. Müller"
       ],
@@ -137,7 +137,7 @@
       "issue": "",
       "pages": "554-561",
       "citations": 2,
-      "abstract": "",
+      "abstract": "Accurate prediction of short-term taxi demand allows taxi services to strategically position idle vehicles in areas with insufficient supply, thus reducing idle times for taxis and waiting times for passengers. Towards this end, state-of-the-art approaches use Machine Learning (ML) models based on historic demand data, such as Long Short-Term Memory (LSTM), Fully Connected Feed Forward Neural Network (FCNN), Convolutional Neural Network (CNN), Graph Convolutional Network (GCN), or a combination of these. The majority of approaches use a grid representation of the environment to discretize the pickup locations of trips and time bins to order the temporal dimension of the large multi-target regression problem. While these models show good accuracy, many \\textit{design choices}, such as the size of the grid cells or the number of previous time steps inserted into a model, are made without justification or without proper tuning. This paper systematically investigates these design decisions. Our hypothesis is that considering them jointly rather than in isolation can improve accuracy. We investigate the influence of (1) the selected grid cell size, (2) the number of input maps, (3) the usage of time shift to enlarge the training data, and (4) the potential of transfer learning on the accuracy of short-term taxi demand prediction. We selected different network types and evaluated them on two large real-world datasets. The evaluation shows that our model outperforms state-of-the-art short-term taxi demand prediction models.",
       "type": "Publication"
     },
     {
@@ -148,7 +148,7 @@
       "page_url": "https://julianteusch.github.io/publications/2023-a-systematic-literature-review-on-machine-learning-in-shared-mobility/",
       "authors": [
         "Julian Teusch",
-        "Jan N. Gremmel",
+        "Jan  Niklas Gremmel",
         "Christian Koetsier",
         "Fatema Tuj Johora",
         "Monika Sester",
@@ -168,6 +168,47 @@
   ],
   "preprints": [
     {
+      "title": "Freeze, Validate, Report: Auditing Urban Station Plans with Common Evidence",
+      "year": 2026,
+      "date": "2026-09-30",
+      "slug": "2026-freeze-validate-report-auditing-urban-station-plans-with-common-evidence",
+      "page_url": "https://julianteusch.github.io/preprints/2026-freeze-validate-report-auditing-urban-station-plans-with-common-evidence/",
+      "authors": [
+        "Julian Teusch",
+        "Oliver Keszöcze"
+      ],
+      "venue": "arXiv",
+      "doi": "10.48550/arxiv.2609.39064",
+      "url": "https://arxiv.org/abs/2609.39064",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "citations": 0,
+      "abstract": "Freeze–Validate–Report compares urban station plans under a shared evaluation contract rather than plan-dependent inputs. Seven generators are assessed in Porto and Chicago using common validation evidence and a declared selection rule. Input-sensitivity checks and reproducible decision logs support auditability within that contract, not guarantees of stable deployment performance. Accepted at UrbanAI 2026, co-located with ACM SIGSPATIAL.",
+      "type": "Preprint"
+    },
+    {
+      "title": "CLIPPER Beyond Shortlisting: Auditable Decision Support for Changing Municipal Micromobility Policies",
+      "year": 2026,
+      "date": "2026-09-30",
+      "slug": "2026-clipper-beyond-shortlisting-auditable-decision-support-for-changing-municipal-micromobi",
+      "page_url": "https://julianteusch.github.io/preprints/2026-clipper-beyond-shortlisting-auditable-decision-support-for-changing-municipal-micromobi/",
+      "authors": [
+        "Julian Teusch",
+        "Jörg Philipp Müller",
+        "Monika Sester"
+      ],
+      "venue": "arXiv",
+      "doi": "10.48550/arxiv.2609.39054",
+      "url": "https://arxiv.org/abs/2609.39054",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "citations": 0,
+      "abstract": "CLIPPER combines bounded candidate pools, exact constraint checks and optional full-set audits for changing municipal micromobility policies. Evaluations in Braunschweig, Munich and Berlin examine runtime, coverage and site-level changes across policy edits. Versioned inputs and explicit site-change reports inform a proposed municipal decision process; implementation still requires municipal assessment. Accepted at SpatialConnect 2026, co-located with ACM SIGSPATIAL.",
+      "type": "Preprint"
+    },
+    {
       "title": "CLIPPER: Replayable Shortlisted Optimization for Repeated Spatial Coverage Planning",
       "year": 2026,
       "date": "2026-08-27",
@@ -185,28 +226,7 @@
       "issue": "",
       "pages": "",
       "citations": 0,
-      "abstract": "Operational requirements developed with the City of Braunschweig frame municipal micromobility planning under geofenced exclusions, mandatory retained sites, spacing rules, and area-level caps. Each policy edit requires a new feasible plan; full-set greedy takes tens of seconds per alternative at city scale. We present CLIPPER (Constraint-exact Low-latency Iterative Planning with Pooled Evaluation and Replay). It forms bounded candidate pools but recomputes exact current gains and checks every active constraint before selection. Coverage from each candidate alone sets the initial order. Offline full-set scans measure gains omitted by the pool; online, a conservative bound triggers expansion or audit. CLIPPER-F gives each proposal group the same number of candidate slots. Across Braunschweig, Munich, and Berlin, its mean coverage over complete chains stays within 0.245 percentage points of full-set greedy under the same policy, with 13.6--28.9 times lower mean rollout time. CLIPPER-A instead distributes one shared candidate budget across the groups. Under its coverage-prioritized policy, it uses 9--15% of full-set greedy's rollout time under the same policy, with mean gaps of 1.82 percentage points in Braunschweig, 0.12 in Munich, and 0.27 in Berlin. Together, CLIPPER enables rapid, replayable comparison of recorded city-scale planning states while enforcing every encoded model constraint.",
-      "type": "Preprint"
-    },
-    {
-      "title": "SPARC: Single-Pass Scaling for Motion Forecasting with Conformal Bayesian Last Layers",
-      "year": 2026,
-      "date": "2026-08-21",
-      "slug": "2026-sparc-single-pass-scaling-for-motion-forecasting-with-conformal-bayesian-last-layers",
-      "page_url": "https://julianteusch.github.io/preprints/2026-sparc-single-pass-scaling-for-motion-forecasting-with-conformal-bayesian-last-layers/",
-      "authors": [
-        "Sakif Hossain",
-        "Julian Teusch",
-        "Jörg P. Müller"
-      ],
-      "venue": "arXiv",
-      "doi": "10.48550/arxiv.2608.20802",
-      "url": "https://arxiv.org/abs/2608.20802",
-      "volume": "",
-      "issue": "",
-      "pages": "",
-      "citations": 0,
-      "abstract": "Human motion forecasters are increasingly accurate and fast, but reliable deployment requires uncertainty estimates that are structured, calibrated, and efficient. Bayesian and ensemble-based uncertainty estimates often require repeated stochastic inference [15, 26], while conformal calibration alone does not provide an epistemic signal or preserve trajectory covariance structure [14, 50]. We introduce SPARC (Single-Pass Adaptive Risk Calibration), a Bayesian-conformal uncertainty layer for motion forecasting. A deterministic MLP backbone predicts the future mean, and a conjugate Bayesian last layer converts time-domain feature leverage into an analytic horizon-wise epistemic scale $κ_t(x)$. This scale inflates a graph-temporal Gaussian covariance without changing its correlation structure, and split conformal calibration produces 95% marginal prediction tubes with finite-sample validity under exchangeability. The key interface is the structured factorization $κ_t(x)Σ_{\\mathrm{str},t}(x)$, which injects feature-space epistemic uncertainty into trajectory densities without Monte Carlo sampling. Across nine dataset-protocol blocks and deterministic, multimodal, and calibration baselines, SPARC ranks first on NLL and on the combined MPJPE+NLL criterion while retaining competitive point accuracy and efficient calibrated tubes. Ranking windows by $κ$ separates high-error cases, making the scale usable as a lightweight risk monitor.",
+      "abstract": "Operational requirements developed with the City of Braunschweig frame municipal micromobility planning under geofenced exclusions, mandatory retained sites, spacing rules, and area-level caps. CLIPPER forms bounded candidate pools while recomputing exact current gains and checking every active constraint before selection. Across Braunschweig, Munich, and Berlin, it enables rapid, replayable comparison of recorded city-scale planning states while enforcing every encoded model constraint.",
       "type": "Preprint"
     },
     {
@@ -224,7 +244,7 @@
       ],
       "venue": "arXiv",
       "doi": "10.48550/arxiv.2601.08556",
-      "url": "https://doi.org/10.48550/arxiv.2601.08556",
+      "url": "http://arxiv.org/abs/2601.08556",
       "volume": "",
       "issue": "",
       "pages": "",
@@ -240,7 +260,7 @@
       "page_url": "https://julianteusch.github.io/preprints/2026-regulating-the-curb-with-geofenced-parking-evidence-on-the-friction-reliability-trade-o/",
       "authors": [
         "Julian Teusch",
-        "Jan N. Gremmel",
+        "Jan  Niklas Gremmel",
         "Sören Schleibaum",
         "Jörg P. Müller",
         "David M. Woisetschläger"

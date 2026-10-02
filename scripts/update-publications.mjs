@@ -53,14 +53,24 @@ const CURATED_PUBLICATIONS = [
 ];
 const CURATED_PREPRINTS = [
   {
-    title: "SPARC: Single-Pass Scaling for Motion Forecasting with Conformal Bayesian Last Layers",
+    title: "Freeze, Validate, Report: Auditing Urban Station Plans with Common Evidence",
     year: 2026,
-    date: "2026-08-21",
-    authors: ["Sakif Hossain", "Julian Teusch", "Jörg P. Müller"],
+    date: "2026-09-30",
+    authors: ["Julian Teusch", "Oliver Keszöcze"],
     venue: "arXiv",
-    doi: "10.48550/arxiv.2608.20802",
-    url: "https://arxiv.org/abs/2608.20802",
-    abstract: "Human motion forecasters are increasingly accurate and fast, but reliable deployment requires uncertainty estimates that are structured, calibrated, and efficient. SPARC introduces a Bayesian-conformal uncertainty layer for motion forecasting: a deterministic backbone predicts the future mean, while a conjugate Bayesian last layer converts feature leverage into an analytic horizon-wise epistemic scale. This scale augments structured trajectory covariance without Monte Carlo sampling, and split conformal calibration produces prediction tubes with finite-sample validity under exchangeability.",
+    doi: "10.48550/arxiv.2609.39064",
+    url: "https://arxiv.org/abs/2609.39064",
+    abstract: "Freeze–Validate–Report compares urban station plans under a shared evaluation contract rather than plan-dependent inputs. Seven generators are assessed in Porto and Chicago using common validation evidence and a declared selection rule. Input-sensitivity checks and reproducible decision logs support auditability within that contract, not guarantees of stable deployment performance. Accepted at UrbanAI 2026, co-located with ACM SIGSPATIAL.",
+  },
+  {
+    title: "CLIPPER Beyond Shortlisting: Auditable Decision Support for Changing Municipal Micromobility Policies",
+    year: 2026,
+    date: "2026-09-30",
+    authors: ["Julian Teusch", "Jörg Philipp Müller", "Monika Sester"],
+    venue: "arXiv",
+    doi: "10.48550/arxiv.2609.39054",
+    url: "https://arxiv.org/abs/2609.39054",
+    abstract: "CLIPPER combines bounded candidate pools, exact constraint checks and optional full-set audits for changing municipal micromobility policies. Evaluations in Braunschweig, Munich and Berlin examine runtime, coverage and site-level changes across policy edits. Versioned inputs and explicit site-change reports inform a proposed municipal decision process; implementation still requires municipal assessment. Accepted at SpatialConnect 2026, co-located with ACM SIGSPATIAL.",
   },
   {
     title: "CLIPPER: Replayable Shortlisted Optimization for Repeated Spatial Coverage Planning",
@@ -123,6 +133,7 @@ const authorOverrides = new Map([
 ]);
 const supersededPreprintDois = new Set([
   "10.2139/ssrn.4745247",
+  "10.48550/arxiv.2608.20802",
 ]);
 const preferredPreprintDois = new Map([
   [
@@ -211,7 +222,9 @@ const preprints = mergeWorks(
 function mergeWorks(primary, curated) {
   const merged = [...primary];
   for (const work of curated) {
-    if (!workMatches(work, merged)) merged.push(work);
+    const index = merged.findIndex((candidate) => workMatches(work, [candidate]));
+    if (index < 0) merged.push(work);
+    else merged[index] = { ...work, citations: merged[index].citations };
   }
   return merged;
 }
