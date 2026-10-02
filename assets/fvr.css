@@ -1,0 +1,38 @@
+.fvr-page { letter-spacing: 0; }
+.fvr-title { padding: 52px 0 48px; }
+.fvr-title h1 { margin-bottom: 10px; font-size: 2.5rem; line-height: 1.15; overflow-wrap: anywhere; }
+.fvr-subtitle { font-size: 1.25rem; color: var(--project-muted); }
+.fvr-lede { max-width: 850px; margin-top: 24px; color: var(--project-muted); }
+.fvr-links { display: flex; flex-wrap: wrap; gap: 12px 26px; margin-top: 24px; }
+.fvr-page .research-section, .fvr-page .research-citation { padding: 48px 0; }
+.fvr-page .research-section h2, .fvr-page .research-citation h2 { font-size: 1.65rem; line-height: 1.3; }
+.fvr-workflow { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; margin-top: 28px; }
+.fvr-example { margin-top: 24px; }
+.fvr-example .project-media-switch { margin-top: 0; }
+.fvr-example-plans { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; margin-top: 28px; }
+.fvr-example-plans h3 { margin-bottom: 4px; }
+.fvr-example-plans p { color: var(--project-muted); }
+.fvr-example-plans strong { display: block; margin-top: 8px; font-size: 1.3rem; }
+.fvr-bar-track { height: 18px; background: #e3e8e6; }
+.fvr-bar-track div { height: 100%; background: #13746b; transition: width 180ms ease; }
+[data-plan-bar="two"] { background: #287aa0 !important; }
+.fvr-example-result { margin-top: 24px; font-weight: 650; min-height: 3.2em; }
+.fvr-note { max-width: 950px; margin-top: 20px; color: var(--project-muted); font-size: .9rem; }
+.fvr-page .figure-pair { margin-top: 28px; }
+.fvr-page .figure-pair img { aspect-ratio: 4 / 3; background: white; }
+.fvr-table-wrap { overflow-x: auto; margin-top: 30px; }
+.fvr-page table { width: 100%; border-collapse: collapse; text-align: left; font-size: .95rem; }
+.fvr-page caption { text-align: left; color: var(--project-muted); padding-bottom: 12px; }
+.fvr-page th, .fvr-page td { padding: 13px 16px; border-bottom: 1px solid var(--project-line); }
+.fvr-page thead { background: #e8eeec; }
+.fvr-page th { font-weight: 650; }
+@media (max-width: 680px) {
+  .fvr-title { padding: 32px 0; }
+  .fvr-title h1 { font-size: 2rem; }
+  .fvr-subtitle { font-size: 1.1rem; }
+  .fvr-workflow { grid-template-columns: 1fr; gap: 22px; }
+  .fvr-example-plans { gap: 20px; }
+  .fvr-page th, .fvr-page td { padding: 12px 8px; min-width: 100px; }
+  .fvr-page .research-section, .fvr-page .research-citation { padding: 36px 0; }
+}
+@media (prefers-reduced-motion: reduce) { .fvr-bar-track div { transition: none; } }

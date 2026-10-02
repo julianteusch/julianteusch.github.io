@@ -9,11 +9,13 @@ const OPENALEX_PAGE_SIZE = 100;
 const OPENALEX_MAX_ATTEMPTS = 3;
 const OPENALEX_RETRY_DELAY_MS = 1_000;
 const STATIC_PAGE_URLS = [
+  `${SITE_URL}/projects/freeze-validate-report/`,
   `${SITE_URL}/projects/sparc/`,
   `${SITE_URL}/projects/clipper/`,
   `${SITE_URL}/projects/geofenced-mobility-facilities/`,
 ];
 const PROJECT_PAGE_URLS = new Map([
+  ["10.48550/arxiv.2609.39064", `${SITE_URL}/projects/freeze-validate-report/`],
   ["10.1016/j.tre.2024.103872", `${SITE_URL}/projects/geofenced-mobility-facilities/`],
   ["10.1007/978-3-032-37350-2_6", `${SITE_URL}/projects/sparc/`],
   ["10.48550/arxiv.2608.20802", `${SITE_URL}/projects/sparc/`],
