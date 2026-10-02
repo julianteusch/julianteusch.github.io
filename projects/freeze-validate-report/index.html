@@ -12,7 +12,7 @@
   <link rel="canonical" href="https://julianteusch.github.io/projects/freeze-validate-report/">
   <link rel="stylesheet" href="../../styles.css">
   <link rel="stylesheet" href="../../assets/research-project.css">
-  <link rel="stylesheet" href="../../assets/fvr.css">
+  <link rel="stylesheet" href="../../assets/fvr.css?v=20261002-design2">
 </head>
 <body class="research-project-page fvr-page">
   <header class="research-header">
@@ -32,14 +32,33 @@
   <main>
     <section class="fvr-title research-section-inner">
       <p class="research-eyebrow" data-i18n="fvr.status">UrbanAI 2026 · ACM SIGSPATIAL workshop · Accepted / In Press</p>
-      <h1>Freeze, Validate, Report</h1>
+      <h1><span>Freeze,</span> <span>Validate,</span> <span>Report.</span></h1>
       <p class="fvr-subtitle">Auditing Urban Station Plans with Common Evidence</p>
       <p><strong>Julian Teusch</strong> · Oliver Keszöcze</p>
       <p class="fvr-lede" data-i18n="fvr.intro">Compare the plans, not different versions of the evidence. A shared evaluation contract makes station-planning decisions traceable from inputs to the final test report.</p>
       <div class="fvr-links"><a href="https://arxiv.org/abs/2609.39064" data-i18n="clipper.action.paper">Paper on arXiv</a><a href="../../assets/papers/urbanai-2026-author-preprint.pdf" data-i18n="inpress.preprint">Author preprint (PDF)</a></div>
     </section>
 
-    <section class="research-section research-soft" id="contract">
+    <section class="research-section fvr-lab">
+      <div class="research-section-inner">
+        <p class="research-eyebrow" data-i18n="fvr.example.label">A two-point example from the paper</p>
+        <h2 data-i18n="fvr.example.title">Changing what you score can reverse the ranking.</h2>
+        <div class="fvr-example">
+          <div class="project-media-switch" role="group" aria-label="Evaluation evidence" data-i18n-aria-label="fvr.example.label">
+            <button type="button" data-evidence="common" aria-pressed="true" data-i18n="fvr.example.common">Both demand points</button>
+            <button type="button" data-evidence="dependent" aria-pressed="false" data-i18n="fvr.example.dependent">Best-served point per plan</button>
+          </div>
+          <div class="fvr-example-plans" aria-live="polite">
+            <div class="fvr-plan" data-plan="one"><div class="fvr-plan-heading"><h3>Plan S₁</h3><strong data-plan-score="one">500 m</strong></div><div class="fvr-observations"><span>0 m</span><span data-omitted>1,000 m</span></div><div class="fvr-distance-track"><i style="--distance:0%"></i><i data-omitted style="--distance:100%"></i><b data-mean="one" style="--distance:50%"></b></div><div class="fvr-bar-track"><div data-plan-bar="one" style="width:50%"></div></div></div>
+            <div class="fvr-plan" data-plan="two"><div class="fvr-plan-heading"><h3>Plan S₂</h3><strong data-plan-score="two">450 m</strong></div><div class="fvr-observations"><span>400 m</span><span data-omitted>500 m</span></div><div class="fvr-distance-track"><i style="--distance:40%"></i><i data-omitted style="--distance:50%"></i><b data-mean="two" style="--distance:45%"></b></div><div class="fvr-bar-track"><div data-plan-bar="two" style="width:45%"></div></div></div>
+          </div>
+          <p class="fvr-example-result" data-example-result data-i18n="fvr.example.commonResult">The declared mean ranks S₂ first: 450 m versus 500 m. Lower is better.</p>
+          <p class="fvr-note" data-i18n="fvr.example.note">Illustrative distances, not city results. Retaining only each plan’s best-served point changes the target: the reported minimum is no longer the declared two-point mean.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="research-section" id="contract">
       <div class="research-section-inner">
         <p class="research-eyebrow" data-i18n="fvr.contract.label">The evaluation contract</p>
         <h2 data-i18n="fvr.contract.title">Same evidence. Explicit priorities. One test report.</h2>
@@ -51,33 +70,15 @@
       </div>
     </section>
 
-    <section class="research-section">
-      <div class="research-section-inner">
-        <p class="research-eyebrow" data-i18n="fvr.example.label">A two-point example from the paper</p>
-        <h2 data-i18n="fvr.example.title">Changing what you score can reverse the ranking.</h2>
-        <div class="fvr-example">
-          <div class="project-media-switch" role="group" aria-label="Evaluation evidence" data-i18n-aria-label="fvr.example.label">
-            <button type="button" data-evidence="common" aria-pressed="true" data-i18n="fvr.example.common">Both demand points</button>
-            <button type="button" data-evidence="dependent" aria-pressed="false" data-i18n="fvr.example.dependent">Best-served point per plan</button>
-          </div>
-          <div class="fvr-example-plans" aria-live="polite">
-            <div><h3>Plan S₁</h3><p>0 m + 1,000 m</p><div class="fvr-bar-track"><div data-plan-bar="one" style="width:50%"></div></div><strong data-plan-score="one">500 m</strong></div>
-            <div><h3>Plan S₂</h3><p>400 m + 500 m</p><div class="fvr-bar-track"><div data-plan-bar="two" style="width:45%"></div></div><strong data-plan-score="two">450 m</strong></div>
-          </div>
-          <p class="fvr-example-result" data-example-result data-i18n="fvr.example.commonResult">The declared mean ranks S₂ first: 450 m versus 500 m. Lower is better.</p>
-          <p class="fvr-note" data-i18n="fvr.example.note">Illustrative distances, not city results. Retaining only each plan’s best-served point changes the target: the reported minimum is no longer the declared two-point mean.</p>
-        </div>
-      </div>
-    </section>
-
     <section class="research-section research-soft" id="evidence">
       <div class="research-section-inner">
         <p class="research-eyebrow" data-i18n="fvr.results.label">Porto and Chicago</p>
         <h2 data-i18n="fvr.results.title">A selection rule, not a universal winner.</h2>
         <p class="fvr-lede" data-i18n="fvr.results.body">The predeclared rule selects IFkCO in Porto and Grid in Chicago. The plots show validation trade-offs; the table reports only the selected plans on held-out test data.</p>
-        <div class="figure-pair">
-          <figure><img src="../../assets/projects/freeze-validate-report/porto-validation.png" alt="Porto validation: IFkCO is selected; overall and worst-group p90 distances differ across seven methods."><figcaption>Porto-SES · <span data-i18n="fvr.plot.caption">Validation evidence. Stars mark selected plans; color indicates the cell gap.</span></figcaption></figure>
-          <figure><img src="../../assets/projects/freeze-validate-report/chicago-validation.png" alt="Chicago validation: Grid is selected; a broken vertical axis retains IFkCO’s outlying worst-group distance."><figcaption>Chicago-Hardship · <span data-i18n="fvr.plot.chicago">Validation evidence; the vertical axis is broken to show the outlying IFkCO result.</span></figcaption></figure>
+        <div class="project-media-switch fvr-city-switch" role="group" aria-label="City"><button type="button" data-city="porto" aria-pressed="true">Porto</button><button type="button" data-city="chicago" aria-pressed="false">Chicago</button></div>
+        <div class="fvr-city-evidence">
+          <div class="fvr-city-panel" data-city-panel="porto"><figure><img src="../../assets/projects/freeze-validate-report/porto-validation.png" alt="Porto validation: IFkCO is selected; overall and worst-group p90 distances differ across seven methods."><figcaption>Porto-SES · <span data-i18n="fvr.plot.caption">Validation evidence. Stars mark selected plans; color indicates the cell gap.</span></figcaption></figure><div class="fvr-metrics"><p class="research-eyebrow">Porto-SES</p><h3>IFkCO</h3><p data-i18n="fvr.table.selected">Selected plan</p><div><strong>805 <small>m</small></strong><span data-i18n="fvr.table.overall">Overall p90</span></div><div><strong>872 <small>m</small></strong><span data-i18n="fvr.table.worst">Worst-group p90</span></div><p class="fvr-note" data-i18n="fvr.test.caption">Selected plans · test endpoint distances (origin + destination access)</p></div></div>
+          <div class="fvr-city-panel" data-city-panel="chicago" hidden><figure><img src="../../assets/projects/freeze-validate-report/chicago-validation.png" alt="Chicago validation: Grid is selected; a broken vertical axis retains IFkCO’s outlying worst-group distance."><figcaption>Chicago-Hardship · <span data-i18n="fvr.plot.chicago">Validation evidence; the vertical axis is broken to show the outlying IFkCO result.</span></figcaption></figure><div class="fvr-metrics"><p class="research-eyebrow">Chicago-Hardship</p><h3>Grid</h3><p data-i18n="fvr.table.selected">Selected plan</p><div><strong>1,404 <small>m</small></strong><span data-i18n="fvr.table.overall">Overall p90</span></div><div><strong>1,656 <small>m</small></strong><span data-i18n="fvr.table.worst">Worst-group p90</span></div><p class="fvr-note" data-i18n="fvr.test.caption">Selected plans · test endpoint distances (origin + destination access)</p></div></div>
         </div>
         <div class="fvr-table-wrap"><table><caption data-i18n="fvr.test.caption">Selected plans · test endpoint distances (origin + destination access)</caption><thead><tr><th data-i18n="fvr.table.setting">Setting</th><th data-i18n="fvr.table.selected">Selected plan</th><th data-i18n="fvr.table.overall">Overall p90</th><th data-i18n="fvr.table.worst">Worst-group p90</th></tr></thead><tbody><tr><th>Porto-SES</th><td>IFkCO</td><td>805 m</td><td>872 m</td></tr><tr><th>Chicago-Hardship</th><td>Grid</td><td>1,404 m</td><td>1,656 m</td></tr></tbody></table></div>
         <p class="fvr-note" data-i18n="fvr.test.note">Chicago’s primary test uses a later time window on the same day. Metric priorities are choices of the authority; selection by point estimates does not establish statistically reliable superiority.</p>
@@ -99,7 +100,7 @@
   </main>
   <footer class="research-footer"><a href="../../">Julian Teusch</a><span>UrbanAI 2026</span></footer>
   <script src="../../assets/language.js?v=fvr-20261002"></script>
-  <script src="../../assets/fvr.js"></script>
+  <script src="../../assets/fvr.js?v=20261002-design2"></script>
   <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"f2b294e5d1904898a65f5b61f3ee6893"}'></script>
 </body>
 </html>

@@ -1,38 +1,81 @@
-.fvr-page { letter-spacing: 0; }
-.fvr-title { padding: 52px 0 48px; }
-.fvr-title h1 { margin-bottom: 10px; font-size: 2.5rem; line-height: 1.15; overflow-wrap: anywhere; }
+.fvr-page { letter-spacing: 0; --fvr-green: #13746b; --fvr-blue: #287aa0; }
+.fvr-page .research-header { border-bottom: 1px solid #dfe5e2; }
+.fvr-title { padding: 68px 0 54px; }
+.fvr-title h1 { margin: 22px 0 18px; font-size: 3.5rem; line-height: 1.12; font-weight: 650; overflow-wrap: anywhere; }
+.fvr-title h1 span:nth-child(2) { color: var(--fvr-green); }
+.fvr-title h1 span:nth-child(3) { color: var(--fvr-blue); }
 .fvr-subtitle { font-size: 1.25rem; color: var(--project-muted); }
-.fvr-lede { max-width: 850px; margin-top: 24px; color: var(--project-muted); }
-.fvr-links { display: flex; flex-wrap: wrap; gap: 12px 26px; margin-top: 24px; }
-.fvr-page .research-section, .fvr-page .research-citation { padding: 48px 0; }
-.fvr-page .research-section h2, .fvr-page .research-citation h2 { font-size: 1.65rem; line-height: 1.3; }
-.fvr-workflow { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; margin-top: 28px; }
-.fvr-example { margin-top: 24px; }
+.fvr-lede { max-width: 820px; margin-top: 24px; color: var(--project-muted); }
+.fvr-links { display: flex; flex-wrap: wrap; gap: 18px 28px; margin-top: 28px; }
+.fvr-links a { text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 5px; font-weight: 600; }
+.fvr-page .research-section, .fvr-page .research-citation { padding: 64px 0; }
+.fvr-page .research-section h2, .fvr-page .research-citation h2 { font-size: 1.8rem; line-height: 1.3; max-width: 840px; }
+.fvr-page .research-eyebrow { color: var(--fvr-green); }
+.fvr-workflow { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 38px; margin-top: 36px; }
+.fvr-workflow .workflow-step { border-top: 2px solid var(--fvr-green); padding-top: 20px; }
+.fvr-workflow .workflow-step:nth-child(2) { border-color: var(--fvr-blue); }
+.fvr-workflow .workflow-step:nth-child(3) { border-color: #c65335; }
+.fvr-workflow .workflow-number { font-size: .85rem; font-weight: 600; color: var(--project-muted); }
+.fvr-workflow h3 { font-size: 1.35rem; margin: 16px 0 12px; }
+.fvr-lab { background: #e9f3ef; border-top: 1px solid #d3e4dc; border-bottom: 1px solid #d3e4dc; }
+.fvr-example { margin-top: 28px; }
 .fvr-example .project-media-switch { margin-top: 0; }
-.fvr-example-plans { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; margin-top: 28px; }
-.fvr-example-plans h3 { margin-bottom: 4px; }
-.fvr-example-plans p { color: var(--project-muted); }
-.fvr-example-plans strong { display: block; margin-top: 8px; font-size: 1.3rem; }
-.fvr-bar-track { height: 18px; background: #e3e8e6; }
-.fvr-bar-track div { height: 100%; background: #13746b; transition: width 180ms ease; }
-[data-plan-bar="two"] { background: #287aa0 !important; }
-.fvr-example-result { margin-top: 24px; font-weight: 650; min-height: 3.2em; }
+.fvr-page .project-media-switch button { border-radius: 4px; padding: 12px 20px; font-size: .95rem; background: transparent; }
+.fvr-page .project-media-switch button[aria-pressed="true"] { background: #202e2a; color: white; border-color: #202e2a; }
+.fvr-example-plans { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 56px; margin-top: 40px; }
+.fvr-plan { --plan-color: var(--fvr-green); padding: 0 0 24px; border-bottom: 1px solid #c3d6cd; }
+.fvr-plan[data-plan="two"] { --plan-color: var(--fvr-blue); }
+.fvr-plan-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
+.fvr-plan-heading h3 { font-size: 1.2rem; margin: 0; }
+.fvr-plan-heading strong { font-size: 2.5rem; font-weight: 550; color: var(--plan-color); font-variant-numeric: tabular-nums; }
+.fvr-observations { display: flex; gap: 24px; margin-top: 14px; color: var(--project-muted); font-size: .9rem; }
+.fvr-distance-track { position: relative; height: 54px; margin: 20px 10px 8px; }
+.fvr-distance-track::before { content: ""; position: absolute; top: 26px; left: 0; right: 0; height: 1px; background: #adc5b9; }
+.fvr-distance-track i { position: absolute; left: var(--distance); top: 20px; width: 13px; height: 13px; background: var(--plan-color); border-radius: 50%; transform: translateX(-50%); }
+.fvr-distance-track b { position: absolute; left: var(--distance); top: 12px; height: 29px; width: 3px; background: #202e2a; transition: left 400ms ease; }
+.fvr-bar-track { height: 7px; background: #d5e4dc; }
+.fvr-bar-track div { height: 100%; background: var(--plan-color); transition: width 400ms ease; }
+[data-omitted] { transition: opacity 300ms ease; }
+.fvr-example[data-mode="dependent"] [data-omitted] { opacity: .2; text-decoration: line-through; }
+.fvr-example-result { margin-top: 30px; font-weight: 600; min-height: 3.2em; padding-left: 16px; border-left: 3px solid var(--fvr-green); }
+.fvr-example[data-mode="dependent"] .fvr-example-result { border-color: #c65335; }
 .fvr-note { max-width: 950px; margin-top: 20px; color: var(--project-muted); font-size: .9rem; }
-.fvr-page .figure-pair { margin-top: 28px; }
-.fvr-page .figure-pair img { aspect-ratio: 4 / 3; background: white; }
-.fvr-table-wrap { overflow-x: auto; margin-top: 30px; }
+.fvr-city-switch { margin: 30px 0 24px; }
+.fvr-city-panel { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(220px, 1fr); gap: 48px; align-items: center; }
+.fvr-city-panel[hidden] { display: none; }
+.fvr-city-panel figure { margin: 0; }
+.fvr-city-panel img { width: 100%; aspect-ratio: 4 / 3; object-fit: contain; background: white; }
+.fvr-city-panel figcaption { font-size: .8rem; color: var(--project-muted); margin-top: 14px; }
+.fvr-metrics h3 { font-size: 2rem; margin: 8px 0; }
+.fvr-metrics > p { margin: 8px 0 20px; }
+.fvr-metrics > div { border-top: 1px solid #d6dfda; padding: 18px 0; display: flex; flex-direction: column; gap: 4px; }
+.fvr-metrics strong { font-size: 2.5rem; font-weight: 550; color: var(--fvr-green); line-height: 1.2; }
+.fvr-metrics small { font-size: 1rem; font-weight: 400; }
+.fvr-metrics span { font-size: .9rem; color: var(--project-muted); }
+.fvr-table-wrap { overflow-x: auto; margin-top: 36px; }
 .fvr-page table { width: 100%; border-collapse: collapse; text-align: left; font-size: .95rem; }
 .fvr-page caption { text-align: left; color: var(--project-muted); padding-bottom: 12px; }
-.fvr-page th, .fvr-page td { padding: 13px 16px; border-bottom: 1px solid var(--project-line); }
+.fvr-page th, .fvr-page td { padding: 16px; border-bottom: 1px solid var(--project-line); }
 .fvr-page thead { background: #e8eeec; }
-.fvr-page th { font-weight: 650; }
+.fvr-page th { font-weight: 600; }
+.fvr-page #resources { background: #202e2a; color: white; }
+.fvr-page #resources .research-eyebrow, .fvr-page #resources a { color: #bde8db; }
+.fvr-page #resources small { color: #c0cdc7; }
+.fvr-page #resources .resource-list a { border-color: #4b5f55; }
 @media (max-width: 680px) {
-  .fvr-title { padding: 32px 0; }
-  .fvr-title h1 { font-size: 2rem; }
+  .fvr-title { padding: 36px 0; }
+  .fvr-title h1 { font-size: 2.5rem; }
+  .fvr-title h1 span { display: block; }
   .fvr-subtitle { font-size: 1.1rem; }
-  .fvr-workflow { grid-template-columns: 1fr; gap: 22px; }
-  .fvr-example-plans { gap: 20px; }
+  .fvr-workflow { grid-template-columns: 1fr; gap: 24px; }
+  .fvr-example-plans { grid-template-columns: 1fr; gap: 26px; margin-top: 28px; }
+  .fvr-plan-heading strong { font-size: 2rem; }
+  .fvr-city-panel { grid-template-columns: 1fr; gap: 24px; }
+  .fvr-metrics { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 20px; }
+  .fvr-metrics > p, .fvr-metrics h3 { grid-column: 1 / -1; }
+  .fvr-metrics strong { font-size: 2rem; }
   .fvr-page th, .fvr-page td { padding: 12px 8px; min-width: 100px; }
-  .fvr-page .research-section, .fvr-page .research-citation { padding: 36px 0; }
+  .fvr-page .research-section, .fvr-page .research-citation { padding: 40px 0; }
+  .fvr-page .research-section h2 { font-size: 1.5rem; }
 }
-@media (prefers-reduced-motion: reduce) { .fvr-bar-track div { transition: none; } }
+@media (prefers-reduced-motion: reduce) { .fvr-page *, .fvr-page *::before { transition: none !important; } }

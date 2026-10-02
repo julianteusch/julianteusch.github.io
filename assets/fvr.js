@@ -1,6 +1,9 @@
 let evidenceMode = "common";
 function renderEvidenceExample() {
   const common = evidenceMode === "common";
+  document.querySelector(".fvr-example").dataset.mode = evidenceMode;
+  document.querySelector('[data-mean="one"]').style.setProperty("--distance", common ? "50%" : "0%");
+  document.querySelector('[data-mean="two"]').style.setProperty("--distance", common ? "45%" : "40%");
   document.querySelector('[data-plan-score="one"]').textContent = common ? "500 m" : "0 m";
   document.querySelector('[data-plan-score="two"]').textContent = common ? "450 m" : "400 m";
   document.querySelector('[data-plan-bar="one"]').style.width = common ? "50%" : "0%";
@@ -20,3 +23,14 @@ document.querySelectorAll("[data-evidence]").forEach((button) => {
 });
 document.addEventListener("site-language-change", renderEvidenceExample);
 renderEvidenceExample();
+
+document.querySelectorAll("[data-city]").forEach(button => {
+  button.addEventListener("click", () => {
+    document.querySelectorAll("[data-city]").forEach(control => {
+      control.setAttribute("aria-pressed", String(control === button));
+    });
+    document.querySelectorAll("[data-city-panel]").forEach(panel => {
+      panel.hidden = panel.dataset.cityPanel !== button.dataset.city;
+    });
+  });
+});
