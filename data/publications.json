@@ -2,8 +2,29 @@
   "source": "OpenAlex and curated records",
   "source_url": "https://openalex.org/authors/orcid:0000-0002-4103-8430",
   "orcid": "0000-0002-4103-8430",
-  "updated_at": "2026-10-26T11:07:16.046Z",
+  "updated_at": "2026-11-02T13:30:08.680Z",
   "publications": [
+    {
+      "title": "CLIPPER Beyond Shortlisting: Auditable Decision Support for Changing Municipal Micromobility Policies",
+      "year": 2026,
+      "date": "2026-10-30",
+      "slug": "2026-clipper-beyond-shortlisting-auditable-decision-support-for-changing-municipal-micromobi",
+      "page_url": "https://julianteusch.github.io/publications/2026-clipper-beyond-shortlisting-auditable-decision-support-for-changing-municipal-micromobi/",
+      "authors": [
+        "Julian Teusch",
+        "Jörg Philipp Müller",
+        "Monika Sester"
+      ],
+      "venue": "",
+      "doi": "10.1145/3849741.3856138",
+      "url": "https://doi.org/10.1145/3849741.3856138",
+      "volume": "",
+      "issue": "",
+      "pages": "21-30",
+      "citations": 0,
+      "abstract": "In municipal planning workshops, planners and other stakeholders compare shared-micromobility parking policies by varying no-parking zones, locked sites, spacing, or area allocations. Each edit changes feasible candidates and how much demand they cover, so the alternative must be reoptimized on the same spatial data. Full-set greedy takes tens of seconds per alternative at city scale. We present Constraint-exact Low-latency Iterative Planning with Pooled Evaluation and Replay (CLIPPER), an optimizer with audit functions developed for requirements elicited with the City of Braunschweig. In each greedy round, it forms a deterministic candidate pool of bounded size, computes how much still-uncovered demand each candidate would add, and rejects candidates that violate an active constraint. An optional audit scans every remaining feasible candidate and records what the restricted pool omitted. We evaluate these functions on complete eleven-state edit chains (E0,…, E10) in Braunschweig, Munich, and Berlin. With K = 1024 candidates per group, the fixed-width mode CLIPPER-F stays on average within 0.245, 0.003, and 0.001 percentage points of full-set greedy coverage under the same policy in Braunschweig, Munich, and Berlin, respectively, with mean optimization speedups of 13.6-28.9×. At this pool size, no audited run is stopped by the pool limit. Plans computed from two checksummed dataset versions of Braunschweig's official no-parking-zone data differ in 30 of about 540 selected sites although coverage moves by only about 0.1 percentage points. The findings inform a proposed municipal process that versions policy inputs, reports site changes beside coverage, and audits the chosen plan before a final decision.",
+      "type": "Publication"
+    },
     {
       "title": "SPARC: Single-Pass Scaling for Motion Forecasting with Conformal Bayesian Last Layers",
       "year": 2026,
@@ -161,7 +182,7 @@
       "volume": "4",
       "issue": "",
       "pages": "870-899",
-      "citations": 35,
+      "citations": 37,
       "abstract": "Shared mobility has emerged as a sustainable alternative to both private transportation and traditional public transport, promising to reduce the number of private vehicles on roads while offering users greater flexibility. Today, urban areas are home to a myriad of innovative services, including car-sharing, ride-sharing, and micromobility solutions like moped-sharing, bike-sharing, and e-scooter-sharing. Given the intense competition and the inherent operational complexities of shared mobility systems, providers are increasingly seeking specialized decision-support methodologies to boost operational efficiency. While recent research indicates that advanced machine learning methods can tackle the intricate challenges in shared mobility management decisions, a thorough evaluation of existing research is essential to fully grasp its potential and pinpoint areas needing further exploration. This paper presents a systematic literature review that specifically targets the application of Machine Learning for decision-making in Shared Mobility Systems. Our review underscores that Machine Learning offers methodological solutions to specific management challenges crucial for the effective operation of Shared Mobility Systems. We delve into the methods and datasets employed, spotlight research trends, and pinpoint research gaps. Our findings culminate in a comprehensive framework of Machine Learning techniques designed to bolster managerial decision-making in addressing challenges specific to Shared Mobility across various levels.",
       "type": "Publication"
     }
