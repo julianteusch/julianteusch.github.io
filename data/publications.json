@@ -2,8 +2,29 @@
   "source": "OpenAlex and curated records",
   "source_url": "https://openalex.org/authors/orcid:0000-0002-4103-8430",
   "orcid": "0000-0002-4103-8430",
-  "updated_at": "2026-10-02T09:59:23.281Z",
+  "updated_at": "2026-11-12T14:36:53.670Z",
   "publications": [
+    {
+      "title": "CLIPPER Beyond Shortlisting: Auditable Decision Support for Changing Municipal Micromobility Policies",
+      "year": 2026,
+      "date": "2026-11-02",
+      "slug": "2026-clipper-beyond-shortlisting-auditable-decision-support-for-changing-municipal-micromobi",
+      "page_url": "https://julianteusch.github.io/publications/2026-clipper-beyond-shortlisting-auditable-decision-support-for-changing-municipal-micromobi/",
+      "authors": [
+        "Julian Teusch",
+        "Jörg Philipp Müller",
+        "Monika Sester"
+      ],
+      "venue": "SpatialConnect 2026 · ACM SIGSPATIAL",
+      "doi": "10.1145/3849741.3856138",
+      "url": "https://doi.org/10.1145/3849741.3856138",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "citations": 0,
+      "abstract": "CLIPPER combines bounded candidate pools, exact constraint checks and optional full-set audits for changing municipal micromobility policies. Evaluations in Braunschweig, Munich and Berlin examine runtime, coverage and site-level changes across policy edits. Versioned inputs and explicit site-change reports inform a proposed municipal decision process; implementation still requires municipal assessment. Accepted at SpatialConnect 2026, co-located with ACM SIGSPATIAL.",
+      "type": "Conference Paper"
+    },
     {
       "title": "SPARC: Single-Pass Scaling for Motion Forecasting with Conformal Bayesian Last Layers",
       "year": 2026,
@@ -92,7 +113,7 @@
       "volume": "86",
       "issue": "",
       "pages": "48-55",
-      "citations": 2,
+      "citations": 3,
       "abstract": "Accurate prediction of e-scooter demand is pivotal for optimizing e-scooter services, as it helps minimize idle times and reduces passengers’ walking distances. Although current neural network-based methods offer high accuracy, their complex architectures obscure the interpretability of predictions, limiting insights into demand dynamics. We propose ST-NAM (Spatial-Temporal Neural Additive Model), an interpretable, neural-network-based model that matches the accuracy of advanced black-box approaches while providing clarity on the decision-making process. Evaluated on comprehensive real-world datasets, ST-NAM demonstrates competitive performance and reveals significant features influencing demand across cities at inference time. This research bridges the gap between predictive precision and model transparency, offering actionable insights to optimize e-scooter service.",
       "type": "Publication"
     },
@@ -114,7 +135,7 @@
       "volume": "194",
       "issue": "",
       "pages": "103872",
-      "citations": 12,
+      "citations": 16,
       "abstract": "The rise of Lightweight Shared Electric Vehicles (LSEVs) like e-scooters and e-bikes marks a shift towards sustainable urban mobility but brings challenges such as cluttering public spaces and distribution issues. Geo-fenced systems have emerged to mitigate these problems by restricting LSEVs to designated areas. However, integrating these infrastructures effectively remains challenging due to regulatory, convenience, and operational hurdles. In this study, we introduce a facility location optimization problem that strategically places Micro-Mobility Service Facilities (MMSFs) that enable charging, parking, and battery swapping of LSEVs. A utility model with benefit and loss functions accounts for the multiple objectives in this problem, including the impact of MMSF placement on service coverage and user convenience as well as financial and logistical costs. This model is uniquely customizable, allowing urban planners to modify the utility function’s parameters to align with specific local priorities and regulatory conditions. To solve this facility location optimization problem, we present a Deep Reinforcement Learning (RL) method that iteratively learns optimal placement strategies for Micro-Mobility Service Facilities by simulating interactions within real-world urban road networks and adapting to user demand patterns, regulatory constraints, and operational efficiencies. Our experiments in Austin and Louisville demonstrate that strategic placement of these facilities leads to substantial enhancements in infrastructure coverage, with improvements in parking demand by up to 163% in Austin and 72% in Louisville. These results underline the role of our approach in fostering more equitable and efficient urban mobility systems, significantly exceeding traditional simulation-based methods in both coverage and operational logistics. In particular, the results based on various budget scenarios reveal that service coverage and accessibility can be improved, with diminishing returns at higher budget levels due to demand saturation.",
       "type": "Publication"
     },
@@ -136,7 +157,7 @@
       "volume": "78",
       "issue": "",
       "pages": "554-561",
-      "citations": 2,
+      "citations": 3,
       "abstract": "Accurate prediction of short-term taxi demand allows taxi services to strategically position idle vehicles in areas with insufficient supply, thus reducing idle times for taxis and waiting times for passengers. Towards this end, state-of-the-art approaches use Machine Learning (ML) models based on historic demand data, such as Long Short-Term Memory (LSTM), Fully Connected Feed Forward Neural Network (FCNN), Convolutional Neural Network (CNN), Graph Convolutional Network (GCN), or a combination of these. The majority of approaches use a grid representation of the environment to discretize the pickup locations of trips and time bins to order the temporal dimension of the large multi-target regression problem. While these models show good accuracy, many \\textit{design choices}, such as the size of the grid cells or the number of previous time steps inserted into a model, are made without justification or without proper tuning. This paper systematically investigates these design decisions. Our hypothesis is that considering them jointly rather than in isolation can improve accuracy. We investigate the influence of (1) the selected grid cell size, (2) the number of input maps, (3) the usage of time shift to enlarge the training data, and (4) the potential of transfer learning on the accuracy of short-term taxi demand prediction. We selected different network types and evaluated them on two large real-world datasets. The evaluation shows that our model outperforms state-of-the-art short-term taxi demand prediction models.",
       "type": "Publication"
     },
@@ -161,74 +182,53 @@
       "volume": "4",
       "issue": "",
       "pages": "870-899",
-      "citations": 33,
+      "citations": 44,
       "abstract": "Shared mobility has emerged as a sustainable alternative to both private transportation and traditional public transport, promising to reduce the number of private vehicles on roads while offering users greater flexibility. Today, urban areas are home to a myriad of innovative services, including car-sharing, ride-sharing, and micromobility solutions like moped-sharing, bike-sharing, and e-scooter-sharing. Given the intense competition and the inherent operational complexities of shared mobility systems, providers are increasingly seeking specialized decision-support methodologies to boost operational efficiency. While recent research indicates that advanced machine learning methods can tackle the intricate challenges in shared mobility management decisions, a thorough evaluation of existing research is essential to fully grasp its potential and pinpoint areas needing further exploration. This paper presents a systematic literature review that specifically targets the application of Machine Learning for decision-making in Shared Mobility Systems. Our review underscores that Machine Learning offers methodological solutions to specific management challenges crucial for the effective operation of Shared Mobility Systems. We delve into the methods and datasets employed, spotlight research trends, and pinpoint research gaps. Our findings culminate in a comprehensive framework of Machine Learning techniques designed to bolster managerial decision-making in addressing challenges specific to Shared Mobility across various levels.",
       "type": "Publication"
-    }
-  ],
-  "preprints": [
+    },
+    {
+      "title": "CLIPPER: Replayable Shortlisted Optimization for Repeated Spatial Coverage Planning",
+      "year": 2026,
+      "date": null,
+      "slug": "2026-clipper-replayable-shortlisted-optimization-for-repeated-spatial-coverage-planning",
+      "page_url": "https://julianteusch.github.io/publications/2026-clipper-replayable-shortlisted-optimization-for-repeated-spatial-coverage-planning/",
+      "authors": [
+        "Julian Teusch",
+        "Jörg Philipp Müller",
+        "Monika Sester"
+      ],
+      "venue": "ACM SIGSPATIAL 2026",
+      "doi": "10.1145/3841645.3843432",
+      "url": "https://doi.org/10.1145/3841645.3843432",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "citations": 0,
+      "abstract": "Operational requirements developed with the City of Braunschweig frame municipal micromobility planning under geofenced exclusions, mandatory retained sites, spacing rules, and area-level caps. CLIPPER forms bounded candidate pools while recomputing exact current gains and checking every active constraint before selection. Across Braunschweig, Munich, and Berlin, it enables rapid, replayable comparison of recorded city-scale planning states while enforcing every encoded model constraint.",
+      "type": "Conference Paper"
+    },
     {
       "title": "Freeze, Validate, Report: Auditing Urban Station Plans with Common Evidence",
       "year": 2026,
-      "date": "2026-09-30",
+      "date": null,
       "slug": "2026-freeze-validate-report-auditing-urban-station-plans-with-common-evidence",
-      "page_url": "https://julianteusch.github.io/preprints/2026-freeze-validate-report-auditing-urban-station-plans-with-common-evidence/",
+      "page_url": "https://julianteusch.github.io/publications/2026-freeze-validate-report-auditing-urban-station-plans-with-common-evidence/",
       "authors": [
         "Julian Teusch",
         "Oliver Keszöcze"
       ],
-      "venue": "arXiv",
-      "doi": "10.48550/arxiv.2609.39064",
+      "venue": "UrbanAI 2026 · ACM SIGSPATIAL",
+      "doi": null,
       "url": "https://arxiv.org/abs/2609.39064",
       "volume": "",
       "issue": "",
       "pages": "",
       "citations": 0,
       "abstract": "Freeze–Validate–Report compares urban station plans under a shared evaluation contract rather than plan-dependent inputs. Seven generators are assessed in Porto and Chicago using common validation evidence and a declared selection rule. Input-sensitivity checks and reproducible decision logs support auditability within that contract, not guarantees of stable deployment performance. Accepted at UrbanAI 2026, co-located with ACM SIGSPATIAL.",
-      "type": "Preprint"
-    },
-    {
-      "title": "CLIPPER Beyond Shortlisting: Auditable Decision Support for Changing Municipal Micromobility Policies",
-      "year": 2026,
-      "date": "2026-09-30",
-      "slug": "2026-clipper-beyond-shortlisting-auditable-decision-support-for-changing-municipal-micromobi",
-      "page_url": "https://julianteusch.github.io/preprints/2026-clipper-beyond-shortlisting-auditable-decision-support-for-changing-municipal-micromobi/",
-      "authors": [
-        "Julian Teusch",
-        "Jörg Philipp Müller",
-        "Monika Sester"
-      ],
-      "venue": "arXiv",
-      "doi": "10.48550/arxiv.2609.39054",
-      "url": "https://arxiv.org/abs/2609.39054",
-      "volume": "",
-      "issue": "",
-      "pages": "",
-      "citations": 0,
-      "abstract": "CLIPPER combines bounded candidate pools, exact constraint checks and optional full-set audits for changing municipal micromobility policies. Evaluations in Braunschweig, Munich and Berlin examine runtime, coverage and site-level changes across policy edits. Versioned inputs and explicit site-change reports inform a proposed municipal decision process; implementation still requires municipal assessment. Accepted at SpatialConnect 2026, co-located with ACM SIGSPATIAL.",
-      "type": "Preprint"
-    },
-    {
-      "title": "CLIPPER: Replayable Shortlisted Optimization for Repeated Spatial Coverage Planning",
-      "year": 2026,
-      "date": "2026-08-27",
-      "slug": "2026-clipper-replayable-shortlisted-optimization-for-repeated-spatial-coverage-planning",
-      "page_url": "https://julianteusch.github.io/preprints/2026-clipper-replayable-shortlisted-optimization-for-repeated-spatial-coverage-planning/",
-      "authors": [
-        "Julian Teusch",
-        "Jörg Philipp Müller",
-        "Monika Sester"
-      ],
-      "venue": "arXiv",
-      "doi": "10.48550/arxiv.2608.26819",
-      "url": "https://arxiv.org/abs/2608.26819",
-      "volume": "",
-      "issue": "",
-      "pages": "",
-      "citations": 0,
-      "abstract": "Operational requirements developed with the City of Braunschweig frame municipal micromobility planning under geofenced exclusions, mandatory retained sites, spacing rules, and area-level caps. CLIPPER forms bounded candidate pools while recomputing exact current gains and checking every active constraint before selection. Across Braunschweig, Munich, and Berlin, it enables rapid, replayable comparison of recorded city-scale planning states while enforcing every encoded model constraint.",
-      "type": "Preprint"
-    },
+      "type": "Conference Paper"
+    }
+  ],
+  "preprints": [
     {
       "title": "EviNAM: Intelligibility and Uncertainty via Evidential Neural Additive Models",
       "year": 2026,
@@ -237,7 +237,7 @@
       "page_url": "https://julianteusch.github.io/preprints/2026-evinam-intelligibility-and-uncertainty-via-evidential-neural-additive-models/",
       "authors": [
         "Sören Schleibaum",
-        "Anton Frederik Thielmann",
+        "Anton Thielmann",
         "Julian Teusch",
         "Benjamin Säfken",
         "Jörg P. Müller"

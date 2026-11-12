@@ -86,6 +86,22 @@ const CURATED_PREPRINTS = [
   },
 ];
 
+// Published proceedings replace the preprint records; arXiv remains accessible.
+const proceedings = [
+  { venue: "UrbanAI 2026 · ACM SIGSPATIAL", doi: null },
+  { venue: "SpatialConnect 2026 · ACM SIGSPATIAL", doi: "10.1145/3849741.3856138" },
+  { venue: "ACM SIGSPATIAL 2026", doi: "10.1145/3841645.3843432" },
+];
+CURATED_PUBLICATIONS.push(...CURATED_PREPRINTS.splice(0).map((paper, index) => ({
+  ...paper,
+  venue: proceedings[index].venue,
+  doi: proceedings[index].doi,
+  url: proceedings[index].doi ? `https://doi.org/${proceedings[index].doi}` : paper.url,
+  date: index === 1 ? "2026-11-02" : null,
+  type: "Conference Paper",
+})));
+PROJECT_PAGE_URLS.set("10.1145/3841645.3843432", `${SITE_URL}/projects/clipper/`);
+
 OPENALEX_URL.searchParams.set("filter", `author.orcid:${ORCID}`);
 OPENALEX_URL.searchParams.set("sort", "publication_year:desc,publication_date:desc");
 OPENALEX_URL.searchParams.set("per-page", String(OPENALEX_PAGE_SIZE));
@@ -134,6 +150,9 @@ const authorOverrides = new Map([
   ["David M. Woisetschlaeger", "David M. Woisetschläger"],
 ]);
 const supersededPreprintDois = new Set([
+  "10.48550/arxiv.2608.26819",
+  "10.48550/arxiv.2609.39054",
+  "10.48550/arxiv.2609.39064",
   "10.2139/ssrn.4745247",
   "10.48550/arxiv.2608.20802",
 ]);
